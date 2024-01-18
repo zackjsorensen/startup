@@ -19,5 +19,10 @@ Users recieve info about the goals and records set by their friends
 - Ability to edit, delete, or add goals and personal records
 
 ### Required Technologies
-- JavaScript - provides pace calculations given parameters
-- Database/Login - stores and saves data entered by users
+- **HTML** - will be used to structure the page, especially the tables displaying user's info
+- **CSS** - will use colors and design to provide an energetic and invigorating feel to the website while keeping it simple and user friendly
+- **JavaScript** - provides pace calculations given parameters entered by the user, used for login service, used to create/edit/delete goals and records
+- **Database/Login** - stores and saves data entered by users, tracks their personal accounts
+- **Websocket** - when a user enters a new goal or personal best, other users (friends) are notified
+- **Web Service** - Will access a different motivational quote from a third party service for each login.
+- **Web Framework** - Will use React for the framework 
