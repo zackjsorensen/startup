@@ -8,3 +8,9 @@ Those in the running community seek to continually improve and acheive personal 
 ### Design: Main Page
 ![Design of main page](https://github.com/zackjsorensen/startup/assets/156393800/d4517d17-e454-41e5-953c-03f81ef4b09f)
 
+### Key Features
+- Login using HTTPS
+- Database that saves any entered personal bests and goals
+- Interactive pace calculator (enter a goal time and distance and it outputs the pace to run)
+- Feed showing goals and personal bests of friends
+- Ability to edit, delete, or add goals and personal records
