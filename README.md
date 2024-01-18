@@ -7,6 +7,9 @@ Those in the running community seek to continually improve and acheive personal 
 ![Design of login page](https://github.com/zackjsorensen/startup/assets/156393800/73501cb7-a2af-420c-8914-9eab8d391abf)
 ### Design: Main Page
 ![Design of main page](https://github.com/zackjsorensen/startup/assets/156393800/d4517d17-e454-41e5-953c-03f81ef4b09f)
+### Diagram: User-Server Interaction
+![User-Server Interaction Diagram](https://github.com/zackjsorensen/startup/assets/156393800/802eb2b6-9085-4cf4-aeb3-e14c8a33c281)
+Users recieve info about the goals and records set by their friends
 
 ### Key Features
 - Login using HTTPS
