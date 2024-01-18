@@ -17,3 +17,7 @@ Users recieve info about the goals and records set by their friends
 - Interactive pace calculator (enter a goal time and distance and it outputs the pace to run)
 - Feed showing goals and personal bests of friends
 - Ability to edit, delete, or add goals and personal records
+
+### Required Technologies
+- JavaScript - provides pace calculations given parameters
+- Database/Login - stores and saves data entered by users
