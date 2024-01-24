@@ -6,20 +6,13 @@ _
     2. **Edit** code                          *  
     3. **Save**                               *  
     4. **Add** and **commit** changes         *  
-    
         -> _git add ._  
-        
         ->_git commit_ _-m_ _"MESSAGEHERE"_  
-        
     5. **Push**  
-    
         -> _git push_  
-        
     Steps with * should be done very regularly  
     
-
 ## Formatting Tips  
 For Newline, leave 2 spaces, then hit enter  
-
 Helps if you put _ and ** up top on their own line
     See the GIt/GitHub in VS Code notes as reference
