@@ -16,3 +16,10 @@ _
 For Newline, leave 2 spaces, then hit enter  
 Helps if you put _ and ** up top on their own line
     See the GIt/GitHub in VS Code notes as reference
+
+## DNS Records
+
+    They are files that live in DNS servers  
+    Needed so a user can access webiste using the domain name  
+    Domain Naming System --> the global system that maps human-readable hostnames to the IP address  
+    Contain useful info to help find a the IP address you're looking for
