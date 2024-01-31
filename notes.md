@@ -12,6 +12,8 @@ _
         -> _git push_
     Steps with * should be done very regularly
 
+    Why is this so hard bro? 
+
 ## Formatting Tips
 Helps if you put _ and ** up top on their own line
     See the GIt/GitHub in VS Code notes as reference
