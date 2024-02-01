@@ -1,6 +1,16 @@
+<!DOCTYPE html>
+<html lang = "en"></html>
+<head>
+    <title>Pace Charts</title>
+</head>
+
 <body>
 
-    <p><h2>My PRs</h2></p>
+    <p>
+        <h2>My PRs</h2>
+        <button>Add</button>
+    </p>
+    
     <table id="prs">
         
         <tr>
@@ -23,6 +33,7 @@
     </table >
     <div></div>
     <p><h2>My Goals</h2></p>
+    <button>Add</button>
     <table id="goals">
         <tr>
             <th>Distance</th>
@@ -51,11 +62,24 @@
     <p><h2>Pace Calculator</h2></p>
     <table id= "Calculator">
         <tr>
-            <th> 
-                <td>Distance</td>
-                <td>Time</td>
-                <td>Pace</td>
-            </th>
+            <th>Distance</th>
+            <th>Time</th>
+            <th>Pace</th>
+        </tr>
+        <tr>
+                <td>
+                    <form action="" id = "getdist">
+                        <input type="text">
+                    </form>
+                </td>
+                <td>
+                    <form action="" id = "gettime">
+                        <input type="text">
+                    </form>
+                </td>
+                <td>
+                    Required Pace
+                </td>
         </tr>
         <tr>
             <td id="distance">
