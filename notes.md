@@ -1,22 +1,7 @@
 ## Using Git/GitHub in VS Code
-_
-**
-    (Using terminal and browser. Explore better ways in future)
-<<<<<<< HEAD
-    1. **Pull** from GitHub ->_git pull_
-    2. **Edit** code                          *
-    3. **Save**                               *
-    4. **Add** and **commit** changes         *
-        -> _git add ._
-        ->_git commit_ _-m_ _"MESSAGEHERE"_
-    5. **Push**
-        -> _git push_
-    Steps with * should be done very regularly
 
-    Why is this so hard bro? 
-
-## Formatting Tips
-=======
+    (Using terminal and browser. Explore better ways in future) 
+    
     1. **Pull** from GitHub ->_git pull_  
     2. **Edit** code                          *  
     3. **Save**                               *  
