@@ -1,5 +1,5 @@
 ## Using Git/GitHub in VS Code
-
+_ *
     (Using terminal and browser. Explore better ways in future) 
     
     1. **Pull** from GitHub ->_git pull_  
