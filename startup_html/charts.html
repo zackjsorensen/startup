@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang = "en"></html>
 <head>
-    <title>Pace Charts</title>
+    <title>My Stats</title>
 </head>
 
 <body>
@@ -20,31 +20,33 @@
 <main>
     <p>
         <h2>My PRs</h2>
-        <button>Add</button>
+        <button class = "add_button" id = "add_PR">Add</button>
     </p>
     
-    <table id="prs">
+    <table id="prs" class = "int_tabs">
         
         <tr>
             <th>Distance</th>
             <th>Time</th>
             <th>Pace</th>
         </tr>
-        <tr>
+        <tr class = "pr_row">
             <td>1 mile</td>
             <td>4:38</td>
             <td>4:38</td>
             <td><button class = "edit">Edit</button> </td>
+            <td><button class = "del">Delete</button> </td>
             <tr>
                 
             </tr>
         </tr>
-        <tr>
+        <tr class = "pr_row">
             <td>13.1 miles</td>
             <td>1:30:02</td>
             <td>6:57</td>
             <td>
-                <button class = "edit">Edit</button> 
+                <button class = "edit">Edit</button>
+                <td><button class = "del">Delete</button> </td> 
             </td>
         </tr>
 
@@ -53,29 +55,32 @@
     <div></div>
     <p><h2>My Goals</h2></p>
     <button>Add</button>
-    <table id="goals">
-        <tr>
+    <table id="goals" class = "int_tabs">
+        <tr >
             <th>Distance</th>
             <th>Time</th>
             <th>Pace</th>
         </tr>
-        <tr>
+        <tr class = "goal_row">
             <td>1 mile</td>
             <td>3:18</td>
             <td>3:18</td>
             <td><button class = "edit">Edit</button> </td>
+            <td><button class = "del">Delete</button> </td>
         </tr>
-        <tr>
+        <tr class = "goal_row">
             <td>13.1 miles</td>
             <td>1:29:59</td>
             <td>6:54</td>
             <td><button class = "edit">Edit</button> </td>
+            <td><button class = "del">Delete</button> </td>
         </tr>
-        <tr>
+        <tr class = "goal_row">
             <td>26.2 miles</td>
             <td>2:01:59</td>
             <td>4:39</td>
             <td><button class = "edit">Edit</button> </td>
+            <td><button class = "del">Delete</button> </td>
         </tr>
         
     </table>
