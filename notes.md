@@ -26,6 +26,11 @@ Helps if you put _ and ** up top on their own line
     Domain Naming System --> the global system that maps human-readable hostnames to the IP address  
     Contain useful info to help find a the IP address you're looking for
 
+## Deploying
+Has to be in linux  
+Use the key file in linux, the windows permissions won't work. It's in ~/byu/keys  
+
+
 ## Responsive Design
 
     header { flex: 0;} 
