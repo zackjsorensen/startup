@@ -1,5 +1,6 @@
 ## Using Git/GitHub in VS Code
-_ *
+_ 
+**
     (Using terminal and browser. Explore better ways in future) 
     
     1. **Pull** from GitHub ->_git pull_  
@@ -24,3 +25,13 @@ Helps if you put _ and ** up top on their own line
     Needed so a user can access webiste using the domain name  
     Domain Naming System --> the global system that maps human-readable hostnames to the IP address  
     Contain useful info to help find a the IP address you're looking for
+
+## Responsive Design
+
+    header { flex: 0;} // makes the header a fixed size, the minimum size to display the content. Displayed as block 
+    h1 {
+  display: inline;
+  float: left;
+  padding-right: 20px;
+} // puts the h1s on the same line, floated to left of the parent, with 20px between them all 
+
