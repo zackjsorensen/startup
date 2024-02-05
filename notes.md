@@ -28,10 +28,11 @@ Helps if you put _ and ** up top on their own line
 
 ## Responsive Design
 
-    header { flex: 0;} // makes the header a fixed size, the minimum size to display the content. Displayed as block 
+    header { flex: 0;} 
+    // makes the header a fixed size, the minimum size to display the content. Displayed as block 
     h1 {
   display: inline;
   float: left;
-  padding-right: 20px;
-} // puts the h1s on the same line, floated to left of the parent, with 20px between them all 
+  padding-right: 20px;}
+  // puts the h1s on the same line, floated to left of the parent, with 20px between them all 
 
