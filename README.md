@@ -25,4 +25,13 @@ Users recieve info about the goals and records set by their friends
 - **Database/Login** - stores and saves data entered by users, tracks their personal accounts
 - **Websocket** - when a user enters a new goal or personal best, other users (friends) are notified
 - **Web Service** - Will access a different motivational quote from a third party service for each login.
-- **Web Framework** - Will use React for the framework 
+- **Web Framework** - Will use React for the framework
+
+## HTML Deliverable  
+- HTML pages - I have 3 pages - a login, a main page displaying database stats and the calculator, and a feed page showing notifications
+- Links - each page has a header navigation that links to all of the other pages
+- Text - Text headings and table headings organize the display.
+- Images - I included a running image on the feed.html page
+- DB/Login - Input boxes and submit button for login. On the stats page, the goals and PRs represent data pulled from the data base
+- Websocket - the feed page shows where notifications about friends will go, this data will come from Websocket
+- 3rd Party Server - on the feed page is a text place holder where inspirational quotes form a 3rd party server will go
