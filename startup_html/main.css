@@ -3,24 +3,37 @@
 body {
     display: flex;
     flex-direction: column;
+    height: 100vh;
+    margin: 0;
 }
-
 header {
+    flex: 0 80px;  /* it doesn't get bigger than 80px */
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+}
+#banner {
     flex: 1;
+    height: 100%;
     color: white;
     padding: 0;
     margin: 0;
     display: block;
     float: left;
     flex-direction: row;
-    background-color: steelblue;
+    background-image: linear-gradient(to right, steelblue, gold);
 
 }
-menu {
-    display: inline;
+nav {
+    background-color: rgb(40, 40, 40);
+    display: block; 
+    margin-top: auto;
+    
+    
 }
-#banner {
-padding-left: 20px;
-height: 100%;
+.navlink {
+    display:inline;
+    color: white;
+    margin: auto;
 
 }
