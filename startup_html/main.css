@@ -7,33 +7,47 @@ body {
     margin: 0;
 }
 header {
-    flex: 0 80px;  /* it doesn't get bigger than 80px */
+    flex: 1 80px;  /* it doesn't get bigger than 80px */
     display: flex;
     flex-direction: column;
     padding: 0;
+   
+    max-height: 12%;
 }
 #banner {
-    flex: 1;
-    height: 100%;
     color: white;
     padding: 0;
+    flex-grow: 2;
     margin: 0;
     display: block;
     float: left;
     flex-direction: row;
     background-image: linear-gradient(to right, steelblue, gold);
+    height: 50%;
+    justify-content: center;
 
+}
+em {
+    
+    opacity: 0.6;
 }
 nav {
     background-color: rgb(40, 40, 40);
-    display: block; 
-    margin-top: auto;
+    display: flex; 
+    flex-direction: row;
+    align-items: center;
+    float: left;
+    height: 25%;
+    
     
     
 }
 .navlink {
     display:inline;
     color: white;
-    margin: auto;
+    padding-inline: 5px;
+    margin-top: 5px ;
+    margin-bottom: 5px;
+    
 
 }
