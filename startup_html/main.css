@@ -50,14 +50,17 @@ nav {
 main {
     flex: 1;
     text-align: center;
-    background-color:cornsilk;
+    background-color:azure;
     margin: 0;
 }
 footer {
     text-align: right;
     display: block;
+    background-color: rgb(99, 98, 98);
 
 }
 .pfoot {
     margin: 5px;
+    color: white;
 }
+#githubfoot {color:white;}
