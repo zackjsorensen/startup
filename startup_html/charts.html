@@ -1,34 +1,39 @@
 <!DOCTYPE html>
 <html lang = "en"></html>
 <head>
+    <link rel="stylesheet" href="main.css">
     <title>My Stats</title>
 </head>
 
 <body>
-<header>
-    <h3>PR318</h3>
-    <nav>
-        <menu>
-            <li><a href="index.html">Login</a></li>
-            <li><a href="charts.html">My Stats</a></li>
-            <li><a href="feed.html">Feed</a></li>
-        </menu>
-    </nav>
+    <header >
+        <div id = "banner">
+            <h1 ><em>PR318</em></h1>
+        </div>
+        <nav>
+            <menu>
+                <a href="index.html" class = "navlink">Login</a>
+               <a href="charts.html" class = "navlink">My Stats</a>
+                <a href="feed.html" class = "navlink">Feed</a>
+            </menu>
+        </nav>
+    
+    </header>
 
-</header>
-<hr />
-<main>
+<main id = "chartsmain">
+<div id="pr_div" class="stat_div">
     <p>
-        <h2>My PRs</h2>
-        <button class = "add_button" id = "add_PR">Add</button>
+        <h2 class = "seg_headers">My PRs</h2>
+        
     </p>
     
-    <table id="prs" class = "int_tabs">
+    <table id="prs" class = "stat_tbl">
         
-        <tr>
+        <tr class = "table_hdrs">
             <th>Distance</th>
             <th>Time</th>
             <th>Pace</th>
+            <td><button class = "add_button" id = "add_PR">Add</button></td>
         </tr>
         <tr class = "pr_row">
             <td>1 mile</td>
@@ -52,14 +57,17 @@
 
 
     </table >
-    <div></div>
+</div>
+
+<div id="goal_div" class="stat_div">
     <p><h2>My Goals</h2></p>
-    <button>Add</button>
-    <table id="goals" class = "int_tabs">
-        <tr >
+    
+    <table id="goals" class = "stat_tbl">
+        <tr class = "table_hdrs">
             <th>Distance</th>
             <th>Time</th>
             <th>Pace</th>
+            <td><button class = "add_button" id = "add_goal">Add</button></td>
         </tr>
         <tr class = "goal_row">
             <td>1 mile</td>
@@ -84,11 +92,12 @@
         </tr>
         
     </table>
+</div>
 
-    
+<div id = "calc_div" class = "stat_div">
     <p><h2>Pace Calculator</h2></p>
     <table id= "Calculator">
-        <tr>
+        <tr class = "table_hdrs">
             <th>Distance</th>
             <th>Time</th>
             <th>Pace</th>
@@ -120,11 +129,12 @@
 
 
     </table>
+</div>
 </body>
 </main>
-<hr />
-<footer>
-<p>Author: Zack Sorensen</p>
-<p><a href="https://github.com/zackjsorensen/startup">Github</a></p>
 
-</footer>
+<footer>
+    <p class="pfoot">Author: Zack Sorensen</p>
+    <p class="pfoot"><a id="githubfoot" href="https://github.com/zackjsorensen/startup">Github</a></p>
+    
+    </footer>

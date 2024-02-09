@@ -38,7 +38,7 @@ nav {
     flex-direction: row;
     align-items: center;
     float: left;
-    height: 25%;
+    height: 30%;
 }
 .navlink {
     display:inline;
@@ -48,13 +48,19 @@ nav {
     margin-bottom: 5px;
 }
 main {
-    flex: 1;
-    
+    flex: 1;  /*make main fill the window*/
+    display: flex;
+    background-color: rgb(1, 148, 197);
+    margin: 0;
+}
+#indexmain{
     text-align: center;
     justify-content: center;
-    background-image: url("https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA0L2pvYjY4Ni0yMjAtdi5qcGc.jpg");
-    background-color: bisque;
-    margin: 0;
+}
+#chartsmain {
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
 }
 footer {
     text-align: right;
@@ -66,10 +72,12 @@ footer {
     margin: 5px;
     color: white;
 }
-#githubfoot {color:white;}
+#githubfoot {
+    color:white;}
 button {
     display: flex;
     width: 40px;
+    height: 20px;
     justify-content: center;
 }
 #loginset{
@@ -80,7 +88,7 @@ button {
     align-items: center;
 }
 .runpic {
-    opacity: 0.4;
+    opacity: 0.;
 }
 
 
