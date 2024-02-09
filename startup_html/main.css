@@ -52,8 +52,8 @@ main {
     
     text-align: center;
     justify-content: center;
-    
-    background-color:azure;
+    background-image: url("https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA0L2pvYjY4Ni0yMjAtdi5qcGc.jpg");
+    background-color: bisque;
     margin: 0;
 }
 footer {
@@ -78,6 +78,9 @@ button {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+.runpic {
+    opacity: 0.4;
 }
 
 
