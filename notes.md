@@ -41,3 +41,11 @@ Use the key file in linux, the windows permissions won't work. It's in ~/byu/key
   padding-right: 20px;}
   // puts the h1s on the same line, floated to left of the parent, with 20px between them all 
 
+## Javascript  
+    Inspired by Scheme, Interpreted, Dynamically typed  
+    How can I use the browser debugging console  
+    Print out to terminal: console.log('string') 
+    Use a script tag in head to reference the script  
+    Or can write it into the html  
+    f12 for debugger in browser  
+    
