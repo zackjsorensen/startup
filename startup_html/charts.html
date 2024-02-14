@@ -26,77 +26,97 @@
         <h2 class = "seg_headers">My PRs</h2>
         
    
-    
+    <div class = "table_tuple">
     <table id="prs" class = "stat_table">
         
         <tr class = "table_hdrs">
             <th>Distance</th>
             <th>Time</th>
             <th>Pace</th>
-            <td><button class = "add_button" id = "add_PR">Add</button></td>
+            
         </tr>
         <tr class = "pr_row">
             <td>1 mile</td>
             <td>4:38</td>
             <td>4:38</td>
-            <td><button class = "edit">Edit</button> </td>
-            <td><button class = "del">Delete</button> </td>
-            
-                
         </tr>
        
         <tr class = "pr_row">
             <td>13.1 miles</td>
             <td>1:30:02</td>
             <td>6:57</td>
-            <td>
-                <button class = "edit">Edit</button>
-                <td><button class = "del">Delete</button> </td> 
-            </td>
         </tr>
 
     </table>
+
+    <table class = "button_table" id = "pr_button_table">
+        <tr>
+            <td><button class = "add_button" id = "add_PR">Add</button></td>
+        </tr>
+        <tr>
+            <td><button class = "edit">Edit</button> </td>
+            <td><button class = "del">Delete</button> </td>
+        </tr>
+        <tr>
+            <td><button class = "edit">Edit</button> </td>
+            <td><button class = "del">Delete</button> </td>
+        </tr>
+
+    </table>
+</div>
 
 </div>
 
 <div id="goal_div" class="stat_div">
     <p><h2>My Goals</h2></p>
-    
+    <div class = "table_tuple">
     <table id="goals" class = "stat_table">
         <tr class = "table_hdrs">
             <th>Distance</th>
             <th>Time</th>
             <th>Pace</th>
-            <td><button class = "add_button" id = "add_goal">Add</button></td>
         </tr>
         <tr class = "goal_row">
             <td>1 mile</td>
             <td>3:18</td>
             <td>3:18</td>
-            <td><button class = "edit">Edit</button> </td>
-            <td><button class = "del">Delete</button> </td>
         </tr>
         <tr class = "goal_row">
             <td>13.1 miles</td>
             <td>1:29:59</td>
             <td>6:54</td>
-            <td><button class = "edit">Edit</button> </td>
-            <td><button class = "del">Delete</button> </td>
         </tr>
         <tr class = "goal_row">
             <td>26.2 miles</td>
             <td>2:01:59</td>
             <td>4:39</td>
-            <td><button class = "edit">Edit</button> </td>
-            <td><button class = "del">Delete</button> </td>
         </tr>
         
     </table>
+    <table class = "button_table" id = "pr_button_table">
+        <tr>
+            <td><button class = "add_button" id = "add_PR">Add</button></td>
+        </tr>
+        <tr>
+            <td><button class = "edit">Edit</button> </td>
+            <td><button class = "del">Delete</button> </td>
+        </tr>
+        <tr>
+            <td><button class = "edit">Edit</button> </td>
+            <td><button class = "del">Delete</button> </td>
+        </tr>
+        <tr>
+            <td><button class = "edit">Edit</button> </td>
+            <td><button class = "del">Delete</button> </td>
+        </tr>
+
+    </table>
+   </div>
 </div>
 
 <div id = "calc_div" class = "stat_div">
     <p><h2>Pace Calculator</h2></p>
-    <table id= "Calculator">
+    <table class= "stat_table">
         <tr class = "table_hdrs">
             <th>Distance</th>
             <th>Time</th>
@@ -114,20 +134,9 @@
                     </form>
                 </td>
                 <td>
-                    Required Pace
+                    PaceGoesHere
                 </td>
         </tr>
-        <tr>
-            <td id="distance">
-                <form method="get" action="">
-
-                </form>
-            </td>
-            <td></td>
-            <td></td>
-        </tr>
-
-
     </table>
 </div>
 </body>

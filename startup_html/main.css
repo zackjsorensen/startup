@@ -5,7 +5,7 @@ body {
     flex-direction: column;
     height: 100vh;
     margin: 0;
-    padding: 0;
+    padding: 0px;
 }
 header {
     flex: 0 80px;  /* it doesn't get bigger than 80px */
@@ -51,7 +51,7 @@ main {
     flex: 1;  /*make main fill the window*/
     display: flex;
     background-color: rgb(1, 148, 197);
-    margin: 0;
+    padding: 15px;
 }
 #indexmain{
     text-align: center;
@@ -103,18 +103,39 @@ button {
     
 }
 
-.stat_table{
-    background-color: white;
-    width: 50%;
+.stat_table {
+    /* background-color: whitesmoke; */
+    width: 50vw;
+    border-spacing: none;
+    border-collapse: collapse;
+    
 
 }
+ th:first-of-type {   /*this stuff makes rounded tables */
+    border-top-left-radius: 10px;
+  }
+  th:last-of-type {
+    border-top-right-radius: 10px;
+  }
+  tr:last-of-type td:first-of-type {
+    border-bottom-left-radius: 10px;
+  }
+  tr:last-of-type td:last-of-type {
+    border-bottom-right-radius: 10px;
+  }
 
 tr:nth-child(odd) {
-    background-color: #f2f2f2;
+    background-color:rgb(222, 222, 222);
+}
+
+tr:nth-child(even) {
+    background-color: white;
 }
 
 th, td {
-    border-bottom: 1px solid #ddddddb9;
+    border: none;
+    padding: 6px;
+    margin: 3px;
 }
 
 /* .del, .edit, .add_button {
@@ -135,11 +156,16 @@ th, td {
     display: block;
 }
 
-#goals {
-    border: 1px solid;
+
+
+.table_tuple {
+    display: flex;
+    flex-direction: row;
 }
 
-
+.button_table {
+    display: none;
+}
 
 
 
