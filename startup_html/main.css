@@ -118,7 +118,7 @@ button {
     width: 50vw;
     border-spacing: none;
     border-collapse: collapse;
-    
+    padding: 20px;
 
 }
  th:first-of-type {   /*this stuff makes rounded tables */
@@ -148,10 +148,10 @@ th, td {
     margin: 3px;
 }
 
-/* .del, .edit, .add_button {
-    display: none;
-} */
-
+.stat_div .edit {
+    margin-bottom: 20px;
+    border-radius: 10%;
+}
 
 
 .stat_div {
@@ -167,15 +167,9 @@ th, td {
 
 
 
-.table_tuple {
-    display: flex;
-    flex-direction: row;
-}
 
-.button_table {
-    
-    background-color: rgb(1, 148, 197);
-}
+
+
 
 /* Feed  */
 
@@ -196,6 +190,16 @@ th, td {
     border-radius: 6px;
 }
 
+button {
+    margin-bottom: 5px;
+    height: 30px;
+    width: 75px;
+    display: table-cell;
+    vertical-align: middle;
+    background-color: gold;
+    border-radius: 7px;
+}
+
 #quote_div {
     display: block;
     background-color: rgba(255, 217, 0, 0.804);
@@ -212,9 +216,9 @@ th, td {
 
 
 /* To DO
-    - Make header responsive, disapear
     - figure out image
     - add media for the add edit del buttons
+        I can make a drop down hover menu wiht a select - need to read about it 
 
-
-*/
+add new, edit, delete
+        */
