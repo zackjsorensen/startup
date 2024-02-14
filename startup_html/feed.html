@@ -2,23 +2,25 @@
 <html lang = "en"></html>
 <head>
     <title>PR318 Feed</title>
+    <link rel="stylesheet" href="main.css">
 </head>
 
 <body>
-<header>
-    <h3>PR318</h3>
-    <nav>
-        <menu>
-            <li><a href="index.html">Login</a></li>
-            <li><a href="charts.html">My Stats</a></li>
-            <li><a href="feed.html">Feed</a></li>
-        </menu>
-    </nav>
+    <header >
+        <div id = "banner">
+            <h1 id = "logo"><em>PR318</em></h1>
+        </div>
+        <nav>
+            <menu>
+                <a href="index.html" class = "navlink">Login</a>
+               <a href="charts.html" class = "navlink">My Stats</a>
+                <a href="feed.html" class = "navlink">Feed</a>
+            </menu>
+        </nav>
+    
+    </header>
 
-</header>
-<hr />
-
-<main>
+<main id = "feedmain">
 <table id = "feed">
     <tr>
         <th>Feed</th>
@@ -27,16 +29,15 @@
     <tr><td>Kim set a new mile goal!</td></tr>
 
 </table>
-
+<div id = "quote_div">
 <p>Inspiration quote from 3rd party goes here</p>
-
-<img src="https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA0L2pvYjY4Ni0yMjAtdi5qcGc.jpg" alt="running">
+</div>
+<img id = "running_img" src="https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA0L2pvYjY4Ni0yMjAtdi5qcGc.jpg" alt="running">
 
 </main>
 
-<hr />
 <footer>
-<p>Author: Zack Sorensen</p>
-<p><a href="https://github.com/zackjsorensen/startup">Github</a></p>
-
-</footer>
+    <p class="pfoot">Author: Zack Sorensen</p>
+    <p class="pfoot"><a id="githubfoot" href="https://github.com/zackjsorensen/startup">Github</a></p>
+    
+    </footer>
