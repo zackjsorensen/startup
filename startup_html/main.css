@@ -8,7 +8,7 @@ body {
     padding: 0px;
 }
 header {
-    flex: 0 80px;  /* it doesn't get bigger than 80px */
+    flex: 1 80px;  /* it doesn't get bigger than 80px */
     display: flex;
     flex-direction: column;
     padding: 0;
@@ -17,19 +17,29 @@ header {
 }
 #banner {
     color: white;
-    padding: 0;
     flex-grow: 2;
-    margin: 0;
-    display: block;
-    float: left;
+    /* margin: auto; */
+    display: flex;
+    
     flex-direction: row;
     background-image: linear-gradient(to right, steelblue, gold);
     height: 50%;
     justify-content: center;
 
 }
-em {
+
+#logo {
+    /* display: flex; */
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    float: left;
+    margin: auto;
     
+    /* justify-self: center; */
+}
+
+em {
     opacity: 0.6;
 }
 nav {
@@ -148,8 +158,7 @@ th, td {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* padding: 10px;
-    margin: 10px; */
+    padding: 10px;
 }
  
 .seg_headers {
