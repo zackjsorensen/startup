@@ -35,3 +35,6 @@ Users recieve info about the goals and records set by their friends
 - DB/Login - Input boxes and submit button for login. On the stats page, the goals and PRs represent data pulled from the data base
 - Websocket - the feed page shows where notifications about friends will go, this data will come from Websocket
 - 3rd Party Server - on the feed page is a text place holder where inspirational quotes form a 3rd party server will go
+
+## CSS Deliverable  
+- 
