@@ -37,4 +37,10 @@ Users recieve info about the goals and records set by their friends
 - 3rd Party Server - on the feed page is a text place holder where inspirational quotes form a 3rd party server will go
 
 ## CSS Deliverable  
-- 
+I have used CSS to style my product including  
+- Header that disappears when the page gets too small, a footer and a main body
+- Navigation Elements - Put in a separate div with a different color to stand out from the main header
+- Responsive to window resizing - I used flex features to make my application shift appropritately when the window size changes
+- Application Elements - Used 3 main colors for simplicity and readability, made the tables striped so individual rows stand out
+- Application text content - simple sans serif font used the whole time
+- Application images - made my image transparent on the feed page
