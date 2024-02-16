@@ -48,4 +48,5 @@ Use the key file in linux, the windows permissions won't work. It's in ~/byu/key
     Use a script tag in head to reference the script  
     Or can write it into the html  
     f12 for debugger in browser  
+    - Use window.localstorage to make a cache to fallback on
     
