@@ -62,6 +62,10 @@ Use the key file in linux, the windows permissions won't work. It's in ~/byu/key
 
 ### JS
 
+## JS Loops  
+For in -- goes over property names  
+For of -- goes over property values
+
 ## JS Arrow Functions
 JS version of lambda function  
 (parameters) => return value;  
@@ -70,10 +74,12 @@ See more: https://learn.cs260.click/page/javascript/arrow/arrow_md
 ## JS Arrays  
 Use []  
 ![alt text](image.png)  
+push, pop, slice, sort(func), values (creates it to use iwht for of loop)
 
 ## JSON  
 Way to represent data so it is easily convertible to JS object  
 https://learn.cs260.click/page/javascript/json/json_md  
+"string", 42, true, ["array", 42], {"object":1, "A":2}, null  
 
 ## JS Objects  
 https://learn.cs260.click/page/javascript/objectClasses/objectClasses_md 
