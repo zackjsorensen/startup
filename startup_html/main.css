@@ -28,6 +28,11 @@ header {
 
 }  
 
+#testing {
+    color: red;
+    display: none;
+}
+
 /* test */
 
 #logo {
