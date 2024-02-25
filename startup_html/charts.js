@@ -20,11 +20,11 @@
 function popup(option) {
     if(option === 'pr') {
         const box = document.getElementById("prs_popup");
-        box.style.display = "block";
+        box.style.display = "flex";
     }
     else if (option === 'goal'){
         const box = document.getElementById("goals_popup");
-        box.style.display = "block";
+        box.style.display = "flex";
     }
 
 }

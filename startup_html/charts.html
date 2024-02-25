@@ -28,14 +28,15 @@
    
         <h2 class = "seg_headers">My PRs</h2>
         <div><button class = "edit" onclick = "popup('pr')">Edit</button></div>
-<!-- <a href="#prs_popup">Edit</a> -->
+
         <div class = "popup" id = "prs_popup">
+            <div><button class = "close" id = "close_prs" onclick = "popdown('pr')">X</button></div>
             <div><button class = "add" id = "add_pr">Add</button></div>
             <div><button class = "update" id = "update_pr">Update</button></div>
-            <div><button class = "close" id = "close_prs" onclick = "popdown('pr')">X</button></div>
+          
             
         </div>
-
+   
     <table id="prs" class = "stat_table">
         
         <tr class = "table_hdrs">
@@ -61,17 +62,18 @@
    
 
 
-</div>
 
 <div id="goal_div" class="stat_div">
     <h2>My Goals</h2>
     <button class = "edit" onclick = " popup('goal')">Edit</button>
 
     <div class = "popup" id = "goals_popup">
+        <div><button class = "close" id = "close_goals" onclick = "popdown('goal')">X</button></div>
         <div><button class = "add" id = "add_goal">Add</button></div>
         <div><button class = "update" id = "update_goal">Update</button></div>
-        <div><button class = "close" id = "close_goals" onclick = "popdown('goal')">X</button></div>
+        
     </div>
+    
     
     <table id="goals" class = "stat_table">
         <tr class = "table_hdrs">

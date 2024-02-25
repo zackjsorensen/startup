@@ -115,9 +115,27 @@ button {
 }
 
 .popup {
+    z-index: 2;
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: 30px; /* need to find way to make popup not move table down*/
+    width: 17vw;
+    height: 150px;;
+    flex-direction: column;
+    
+    background: whitesmoke;
+    color: steelblue;
+    align-items: center;
+    justify-content: space-evenly;
     display: none;
-    background-color: steelblue;
-    color: white;
+}
+
+.close {
+    display: block;
+    float: right;
+    background-color: whitesmoke;
+    color: red;
+    border-width: 0px;
 }
 
 .stat_table {
@@ -198,7 +216,7 @@ th, td {
 }
 
 button {
-    margin-bottom: 5px;
+    margin: 10 px;
     height: 30px;
     width: 75px;
     display: table-cell;
