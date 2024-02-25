@@ -182,5 +182,5 @@ function Submit(option){
 }
 
 // how to make the popups disappear if click anywhere else? 
-// format so i can handle time notation 12:23
-// maybe do a box for hours, minutes, and seconds. 
+// Can I have a function that updates the HTML file? How does that work?
+//     I guess I need to load the data, either from database, or localstorage
