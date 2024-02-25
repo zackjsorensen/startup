@@ -71,11 +71,22 @@ function Add_data (option) {
     localStorage.setItem("distance", distanceEl.value);
     let distance = Number(distanceEl.value);
     
-    const tselector = "#" + option + "_time";
-    let timeEl = document.querySelector(tselector);
-    localStorage.setItem("time", timeEl.value);
-    let time = Number(timeEl.value);
+    const tselector = "#" + option + "_hours";
+    let hoursEl = document.querySelector(tselector);
+    localStorage.setItem("hours", hoursEl.value);
+    let hours = Number(hoursEl.value);
 
+    const mselector = "#" + option + "_minutes";
+    let minutesEl = document.querySelector(mselector);
+    localStorage.setItem("minutes", minutesEl.value);
+    let minutes = Number(minutesEl.value);
+
+    const sselector = "#" + option + "_seconds";
+    let secondsEl = document.querySelector(sselector);
+    localStorage.setItem("seconds", secondsEl.value);
+    let seconds = Number(secondsEl.value);
 }
 
 // how to make the popups disappear if click anywhere else? 
+// format so i can handle time notation 12:23
+// maybe do a box for hours, minutes, and seconds. 

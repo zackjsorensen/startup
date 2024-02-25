@@ -1,3 +1,5 @@
+/* ----------------------General ----------------------- */
+
 * {font-family: sans-serif;}
 
 body {
@@ -7,6 +9,7 @@ body {
     margin: 0;
     padding: 0px;
 }
+            /* --------------- Header/Banner -------- */
 header {
     flex: 0 80px;  /* it doesn't get bigger than 80px */
     display: flex;
@@ -25,25 +28,17 @@ header {
     background-image: linear-gradient(to right, steelblue, gold);
     height: 50%;
     justify-content: center;
-
 }  
 
-
-
-/* test */
-
 #logo {
-    /* display: flex; */
+    
     align-items: center;
     height: 100%;
     width: 100%;
     float: left;
     color: blue;
     margin: auto;
-    
-    /* justify-self: center; */
 }
-
 em {
     opacity: 0.6;
 }
@@ -62,13 +57,14 @@ nav {
     margin-top: 5px ;
     margin-bottom: 5px;
 }
+        /* ---------- Main General ------------ */
 main {
     flex: 1;  /*make main fill the window*/
     display: flex;
     background-color: rgb(1, 148, 197);
     padding: 15px;
 }
-
+        /* --------- Footer ------------- */
 footer {
     text-align: right;
     display: block;
@@ -87,6 +83,8 @@ button {
     height: 20px;
     justify-content: center;
 }
+
+/* ---------------------- INDEX.HTML ----------------------- */
 #indexmain{
     text-align: center;
     justify-content: center;
@@ -104,7 +102,7 @@ button {
 
 
 
-/* My Stats Page */
+/* ---------------------- MY STATS ----------------------- */
 
 #chartsmain {
     display: flex;
@@ -142,9 +140,13 @@ button {
     float: right;
 }
 
-.add_form {
 
+
+.add_form {
+    align-items: center;
     display: none;
+    margin: 10px;
+    flex-direction: column;
 }
 
 .stat_table {
@@ -205,7 +207,7 @@ th, td {
 
 
 
-/* Feed  */
+/* ---------------------- MY FEED ----------------------- */
 
 #feedmain {
     display: flex;
@@ -241,6 +243,8 @@ button {
     padding: 5px;
 }
 
+
+/* ---------------------- MEDIA CODE ----------------------- */
 @media only screen and (max-height: 500px) {
   header {
     display: none;
