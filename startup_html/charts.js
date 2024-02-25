@@ -87,6 +87,60 @@ function Add_data (option) {
     let seconds = Number(secondsEl.value);
 }
 
+function ToSeconds (hours, minutes, seconds) { // takes time format and converts to seconds
+    console.log("to seconds: " + ((hours*60*60) + (minutes * 60) + seconds))
+    return ((hours*60*60) + (minutes * 60) + seconds);
+
+
+}
+
+function FormatFromSec(sec) {
+    let hours = Math.floor(sec/(3600));
+    let remainder = sec % 3600;
+    let minutes = Math.floor(remainder/60);
+    let seconds = remainder % 60;
+
+    if (hours < 10) {
+        hours = '0' + hours;
+    }
+    if (minutes < 10) {
+        minutes = '0' + minutes;
+    }
+    if (seconds < 10) {
+        seconds = '0' + seconds;
+    }
+
+    console.log((hours + ":" + minutes + ":" + seconds));
+
+    return (hours + ":" + minutes + ":" + seconds);
+    
+}
+
+function MilePaceFromSec(sec) {
+    
+    let minutes = Math.floor(sec/60);
+    let seconds = sec % 60;
+
+    if (minutes < 10) {
+        minutes = '0' + minutes;
+    }
+    if (seconds < 10) {
+        seconds = '0' + seconds;
+    }
+
+    console.log(( minutes + ":" + seconds));
+
+    return ( minutes + ":" + seconds);
+    
+}
+
+function CalculatePace(dist, sec) { // takes in dist and seconds, returns formatted pace per mile
+    const pace = sec/ dist;
+    console.log(MilePaceFromSec(pace));
+    return MilePaceFromSec(pace);
+
+}
+
 // how to make the popups disappear if click anywhere else? 
 // format so i can handle time notation 12:23
 // maybe do a box for hours, minutes, and seconds. 
