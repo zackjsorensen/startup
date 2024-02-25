@@ -8,7 +8,11 @@
   <link href="https://getbootstrap.com/docs/5.1/assets/css/docs.css" rel="stylesheet">
 </head>
 
+
 <body>
+
+<!----------------banner/header ---------------->
+
     <header >
         <div id = "banner">
             <h1 id = "logo"><em>PR318</em></h1>
@@ -23,18 +27,38 @@
     
     </header>
 
+
 <main id = "chartsmain">
+    <!----------------PR Section ---------------->
 <div id="pr_div" class="stat_div">
    
         <h2 class = "seg_headers">My PRs</h2>
         <div><button class = "edit" onclick = "popup('pr')">Edit</button></div>
-
+        <!------- popup on edit --------->
         <div class = "popup" id = "prs_popup">
-            <div><button class = "close" id = "close_prs" onclick = "popdown('pr')">X</button></div>
-            <div><button class = "add" id = "add_pr">Add</button></div>
+            <div><div id = "rightx"><button class = "close" id = "close_prs" onclick = "popdown('pr')">X</button></div></div>
+            <div><button class = "add" id = "add_pr" onclick = "Add_popup('pr')">Add</button></div>
             <div><button class = "update" id = "update_pr">Update</button></div>
           
             
+        </div>
+
+        <!-- Add input popup/form -->
+
+        <div class = "add_form" id = "add_form_pr">
+        <td>
+            <form  id = "getdist">
+                <input type="text" id = "pr_dist" placeholder="distance:">
+            </form>
+        </td>
+        <td>
+            <form  id = "gettime">
+                <input type="text" id = "pr_time" placeholder="time:">
+            </form>
+        </td>
+        <td>
+            <button type = "submit" onclick="Add_data('pr')">Submit</button>
+        </td>
         </div>
    
     <table id="prs" class = "stat_table">
@@ -62,19 +86,35 @@
    
 
 
-
+<!----------------Goals Section ---------------->
 <div id="goal_div" class="stat_div">
     <h2>My Goals</h2>
     <button class = "edit" onclick = " popup('goal')">Edit</button>
-
+    <!----------------Goals edit popup------------->
     <div class = "popup" id = "goals_popup">
         <div><button class = "close" id = "close_goals" onclick = "popdown('goal')">X</button></div>
-        <div><button class = "add" id = "add_goal">Add</button></div>
+        <div><button class = "add" id = "add_goal" onclick = "Add_popup('goal')">Add</button></div>
         <div><button class = "update" id = "update_goal">Update</button></div>
         
     </div>
+    <!--------- add goal popup/form ---------->
+    <div class = "add_form" id = "add_form_goal">
+        <td>
+            <form action="" id = "getdist">
+                <input type="text" id = "goal_dist" placeholder="distance:">
+            </form>
+        </td>
+        <td>
+            <form action="" id = "gettime">
+                <input type="text" id = "goal_time" placeholder="time:">
+            </form>
+        </td>
+        <td>
+            <button type = "submit" onclick="Add_data('goal')">Submit</button>
+        </td>
+        </div>
     
-    
+    <!----------------Goal Tables ---------------->
     <table id="goals" class = "stat_table">
         <tr class = "table_hdrs">
             <th>Distance</th>
@@ -101,6 +141,8 @@
     
 </div>
 
+
+<!----------------Calculator Section ---------------->
 <div id = "calc_div" class = "stat_div">
     <h2>Pace Calculator</h2>
     <table class= "stat_table">
@@ -129,6 +171,8 @@
 </body>
 </main>
 
+
+<!---------------- footer ---------------->
 <footer>
     <p class="pfoot">Author: Zack Sorensen</p>
     <p class="pfoot"><a id="githubfoot" href="https://github.com/zackjsorensen/startup">Github</a></p>

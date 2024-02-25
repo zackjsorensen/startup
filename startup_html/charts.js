@@ -40,3 +40,42 @@ function popdown(option) {
     }
 
 }
+
+function Add_popup(option) {
+
+    // let use input distance and time
+    // close popup
+    popdown(option);
+    // popup add input
+    if (option === 'pr') {
+        const box = document.getElementById("add_form_pr");
+        box.style.display = "flex";
+    }
+    else if (option === 'goal'){
+        const box = document.getElementById("add_form_goal");
+        box.style.display = "flex";
+    }
+    // get the distance and time inputted by the user - gotta wait till they input data
+    // let distanceEl = document.querySelector("#${option}_dist");
+    // localStorage.setItem("distance", distanceEl.value);
+
+    // let timeEl = document.querySelector("#${option}_time");
+    // localStorage.setItem("time", timeEl.value);
+}
+
+
+function Add_data (option) {
+// get the distance and time inputted by the user - gotta wait till they input data
+    const dselector = "#" + option + "_dist";
+    let distanceEl = document.querySelector(dselector);
+    localStorage.setItem("distance", distanceEl.value);
+    let distance = Number(distanceEl.value);
+    
+    const tselector = "#" + option + "_time";
+    let timeEl = document.querySelector(tselector);
+    localStorage.setItem("time", timeEl.value);
+    let time = Number(timeEl.value);
+
+}
+
+// how to make the popups disappear if click anywhere else? 

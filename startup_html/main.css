@@ -138,6 +138,15 @@ button {
     border-width: 0px;
 }
 
+#rightx {
+    float: right;
+}
+
+.add_form {
+
+    display: none;
+}
+
 .stat_table {
     /* background-color: whitesmoke; */
     width: 50vw;
