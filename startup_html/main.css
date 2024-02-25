@@ -28,10 +28,7 @@ header {
 
 }  
 
-#testing {
-    color: red;
-    display: none;
-}
+
 
 /* test */
 
@@ -71,15 +68,7 @@ main {
     background-color: rgb(1, 148, 197);
     padding: 15px;
 }
-#indexmain{
-    text-align: center;
-    justify-content: center;
-}
-/* #chartsmain {
-    flex-direction: column;
-    text-align: center;
-    justify-content: center;
-} */
+
 footer {
     text-align: right;
     display: block;
@@ -96,6 +85,10 @@ button {
     display: flex;
     width: 40px;
     height: 20px;
+    justify-content: center;
+}
+#indexmain{
+    text-align: center;
     justify-content: center;
 }
 #loginset{
@@ -119,6 +112,12 @@ button {
     /* padding: px; */
     /* justify-content: space-around; */
     
+}
+
+.popup {
+    display: none;
+    background-color: steelblue;
+    color: white;
 }
 
 .stat_table {
