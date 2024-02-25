@@ -157,9 +157,9 @@ button {
     padding: 20px;
 
 }
- th:first-of-type {   /*this stuff makes rounded tables */
+ /* th:first-of-type {   
     border-top-left-radius: 10px;
-  }
+  }                            // MAKES ROUNDED TABLES, NOT WORKING WHEN I ADD NEW ROWS
   th:last-of-type {
     border-top-right-radius: 10px;
   }
@@ -168,7 +168,8 @@ button {
   }
   tr:last-of-type td:last-of-type {
     border-bottom-right-radius: 10px;
-  }
+  }  */
+  
 
 .stat_table tr:nth-child(odd) {
     background-color:rgb(222, 222, 222);
