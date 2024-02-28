@@ -27,14 +27,14 @@ function popup(option) {
         box.style.display = "flex";
     }
     else if (option === 'calc'){
-        const box = document.getElementById("calc_form");
+        const box = document.getElementById("calc_popup");
         box.style.display = "flex";
     }
 
 }
 
 function popdown(option) {
-    if(option === 'pr') {
+    if(option === 'pr') {                 // this needs to be simplified. Gosh. 
         const box = document.getElementById("prs_popup");
         box.style.display = "none";
     }
@@ -48,6 +48,10 @@ function popdown(option) {
     }
     else if (option === 'goal_add_cancel') {
         const box = document.getElementById("add_form_goal");
+        box.style.display = "none";
+    }
+    else if (option === 'calc_popup') {
+        const box = document.getElementById(option);
         box.style.display = "none";
     }
 }
@@ -202,11 +206,13 @@ function Calc(option){  // for the pace calculator
     const sec = a[1];
     const pace = CalculatePace(distance, sec);
 
-    const tableEl = document.querySelector("#calc_table");
-    const rowEl = document.createElement('tr');
-    rowEl.textContent = "Pace: " + pace;
-    tableEl.appendChild(rowEl);
+    // const tableEl = document.querySelector("#calc_table");
+    // const rowEl = document.createElement('tr');
+    // rowEl.textContent = "Pace: " + pace;
+    // tableEl.appendChild(rowEl);
 
+    const target = document.getElementById("target_pace");
+    target.textContent = "Pace: " + pace;
 
 }
 

@@ -149,6 +149,10 @@ button {
     flex-direction: column;
 }
 
+#target_pace {
+    background-color: white;
+}
+
 .stat_table {
     /* background-color: whitesmoke; */
     width: 50vw;
