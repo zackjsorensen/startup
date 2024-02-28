@@ -153,6 +153,11 @@ button {
     background-color: white;
 }
 
+#calc_tab {
+    display: flex;
+    flex-direction: column;
+}
+
 .stat_table {
     /* background-color: whitesmoke; */
     width: 50vw;

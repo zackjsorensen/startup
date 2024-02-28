@@ -172,33 +172,33 @@
 
 
     <div class = "add_form" id = "calc_popup">
-        <table id = "calcl_tab">
-        <td>
+    <table id = "calc_tab">
+        <tr><td>
             <form class = "popup_in" id = "getdist">
                 <input type="text" id = "calc_dist" placeholder="distance in miles:">
             </form>
-        </td>
-        <td>
+        </td></tr>
+    <tr><td>
             <form class = "popup_in" id = "get_hours">
                 <input type="text" id = "calc_hours" placeholder="hours">
             </form> 
-        </td>
-        <td>
+        </td></tr>
+    <tr><td>
             <form class = "popup_in" id = "get_minutes">
                 <input type="text" id = "calc_minutes" placeholder="minutes">
             </form>
-        </td>
-        <td>
+        </td></tr>
+    <tr><td>
             <form class = "popup_in" id = "get_seconds">
                 <input type="text" id = "calc_seconds" placeholder="seconds">
             </form>
-        </td>
+        </td></tr>
         <!-- Something is very wrong here. Null -->
-        <tr><td id = "target_pace" style="color: red;">Pace: </td></tr>
-        <td>
+        <td id = "target_pace" style="color: red;">Pace: </td>
+    <tr><td>
             <button onclick="Calc('target_pace')">Calculate</button>
             <button id = "close_calc"  onclick="popdown('calc_popup')">Close</button>
-        </td>
+        </td></tr>
     </table>
         </div>
 
@@ -235,7 +235,7 @@
 
 
 <!---------------- footer ---------------->
-<footer>
+    <footer>
     <p class="pfoot">Author: Zack Sorensen</p>
     <p class="pfoot"><a id="githubfoot" href="https://github.com/zackjsorensen/startup">Github</a></p>
     

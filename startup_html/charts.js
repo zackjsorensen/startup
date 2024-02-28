@@ -177,9 +177,13 @@ function ShortFormatFromSec(sec) {
     if (minutes < 10) {
         minutes = '0' + minutes;
     }
+    if (!Number.isInteger(seconds) ) {
+        seconds = Math.round(seconds);
+    }
     if (seconds < 10) {
         seconds = '0' + seconds;
     }
+    
 
     console.log(( minutes + ":" + seconds));
 
@@ -201,25 +205,26 @@ function Submit(option){
 
 
 
-// function Calc(option){  // for the pace calculator
-//     const a = Add_data('calc');
-//     const distance = a[0];
-//     const sec = a[1];
-//     const pace = CalculatePace(distance, sec);
-
-//     // const tableEl = document.querySelector("#calc_table");
-//     // const rowEl = document.createElement('tr');
-//     // rowEl.textContent = "Pace: " + pace;
-//     // tableEl.appendChild(rowEl);
-//     const pacerEl = document.createElement('td');
-    
-//     let p = document.querySelector("#calc_tab");
-//     let t = "Pace: " + pace;
-//     pacerEl.textContent = t;
-//     p.appendChild(pacerEl);
+function Calc(option){  // for the pace calculator
+    const a = Add_data('calc');
+    const distance = a[0];
+    const sec = a[1];
+    const pace = CalculatePace(distance, sec);
     
 
-// }
+    const output = document.querySelector("#target_pace");
+    output.textContent = "Pace: " + pace;
+
+    //----- Code to make new row with the pace -----
+    // const pacerEl = document.createElement('td');
+    
+    // let p = document.querySelector("#calc_tab");
+    // let t = "Pace: " + pace;
+    // pacerEl.textContent = t;
+    // p.appendChild(pacerEl);
+    
+
+}
 
 // fix css for Pace calculator popup
 

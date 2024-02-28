@@ -30,5 +30,5 @@ setInterval(() => {
     const inner = "<tr><td>" + message +  "</td></tr>";
     feedtab.innerHTML =
       feedtab.innerHTML + inner;
-  }, 30000);
+  }, 10000);
   
