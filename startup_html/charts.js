@@ -88,6 +88,7 @@ function Add_data (option) {
     let distanceEl = document.querySelector(dselector);
     localStorage.setItem("distance", distanceEl.value);
     let distance = Number(distanceEl.value);
+    // distanceEl.textContent = "HEYYYYYYYYYY";
     
     const tselector = "#" + option + "_hours";
     let hoursEl = document.querySelector(tselector);
@@ -200,21 +201,25 @@ function Submit(option){
 
 
 
-function Calc(option){  // for the pace calculator
-    const a = Add_data(option);
-    const distance = a[0];
-    const sec = a[1];
-    const pace = CalculatePace(distance, sec);
+// function Calc(option){  // for the pace calculator
+//     const a = Add_data('calc');
+//     const distance = a[0];
+//     const sec = a[1];
+//     const pace = CalculatePace(distance, sec);
 
-    // const tableEl = document.querySelector("#calc_table");
-    // const rowEl = document.createElement('tr');
-    // rowEl.textContent = "Pace: " + pace;
-    // tableEl.appendChild(rowEl);
+//     // const tableEl = document.querySelector("#calc_table");
+//     // const rowEl = document.createElement('tr');
+//     // rowEl.textContent = "Pace: " + pace;
+//     // tableEl.appendChild(rowEl);
+//     const pacerEl = document.createElement('td');
+    
+//     let p = document.querySelector("#calc_tab");
+//     let t = "Pace: " + pace;
+//     pacerEl.textContent = t;
+//     p.appendChild(pacerEl);
+    
 
-    const target = document.getElementById("target_pace");
-    target.textContent = "Pace: " + pace;
-
-}
+// }
 
 // fix css for Pace calculator popup
 
