@@ -86,23 +86,24 @@ function Add_data (option) {
 // get the distance and time inputted by the user - gotta wait till they input data
     const dselector = "#" + option + "_dist";
     let distanceEl = document.querySelector(dselector);
-    localStorage.setItem("distance", distanceEl.value);
+    // localStorage.setItem("distance", distanceEl.value);
+
     let distance = Number(distanceEl.value);
     // distanceEl.textContent = "HEYYYYYYYYYY";
     
     const tselector = "#" + option + "_hours";
     let hoursEl = document.querySelector(tselector);
-    localStorage.setItem("hours", hoursEl.value);
+    // localStorage.setItem("hours", hoursEl.value);
     let hours = Number(hoursEl.value);
 
     const mselector = "#" + option + "_minutes";
     let minutesEl = document.querySelector(mselector);
-    localStorage.setItem("minutes", minutesEl.value);
+    // localStorage.setItem("minutes", minutesEl.value);
     let minutes = Number(minutesEl.value);
 
     const sselector = "#" + option + "_seconds";
     let secondsEl = document.querySelector(sselector);
-    localStorage.setItem("seconds", secondsEl.value);
+    // localStorage.setItem("seconds", secondsEl.value);
     let seconds = Number(secondsEl.value);
 
     const sec = ToSeconds(hours, minutes, seconds);
@@ -130,13 +131,32 @@ function MakeRow(dist, sec, option){
     distEl.textContent = distance;
     timeEl.textContent = time;
     paceEl.textContent = pace;
-
+// row data in an array to be stringified: 
+    let toStore = [distance, time, pace];
+    SaveData(toStore, option);
     const rowEl = document.createElement('tr');
     rowEl.appendChild(distEl);
     rowEl.appendChild(timeEl);
     rowEl.appendChild(paceEl);
 
     tableEl.appendChild(rowEl);
+
+}
+// options for option are: goal, pr, calc
+
+function SaveData(row, option){
+    let data = [];
+    const dataText = localStorage.getItem(option);
+    if (dataText){
+        data = JSON.parse(dataText);
+    }
+    data.push(row);
+    localStorage.setItem(option, JSON.stringify(data));
+
+    // data saved like so: if option is pr, 
+    // in local storage
+    // "pr" = [[dist1, time1, pace1], [dist2, time2, pace2]]
+
 
 }
 
@@ -226,10 +246,39 @@ function Calc(option){  // for the pace calculator
 
 }
 
-// fix css for Pace calculator popup
+function Load(option){
+    
+    console.log("Should be cleared now");
+    let data = [];
+    const dataText = localStorage.getItem(option);
+    if (dataText) {  // if there's anything in localstorage prs, get it. 
+        data = JSON.parse(dataText);
+    }
+    
+    for (row of data){
+        const rowEl = document.createElement('tr');
+        const distEl = document.createElement('td');
+        const timeEl = document.createElement('td');
+        const paceEl = document.createElement('td');
+
+        distEl.textContent = row[0]; 
+        timeEl.textContent = row[1]; 
+        paceEl.textContent = row[2];
+
+        rowEl.appendChild(distEl);
+        rowEl.appendChild(timeEl);
+        rowEl.appendChild(paceEl);
+
+        const sel = "#" + option + "s";
+        tableEl = document.querySelector(sel);
+        tableEl.appendChild(rowEl);
+
+    }
+}
 
 
-
+Load("pr");
+Load("goal");
 // how to make the popups disappear if click anywhere else? 
 // Can I have a function that updates the HTML file? How does that work?
 //     I guess I need to load the data, either from database, or localstorage
