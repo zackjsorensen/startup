@@ -26,6 +26,10 @@ function popup(option) {
         const box = document.getElementById("goals_popup");
         box.style.display = "flex";
     }
+    else if (option === 'calc'){
+        const box = document.getElementById("calc_form");
+        box.style.display = "flex";
+    }
 
 }
 
@@ -38,7 +42,14 @@ function popdown(option) {
         const box = document.getElementById("goals_popup");
         box.style.display = "none";
     }
-
+    else if (option === 'pr_add_cancel') {
+        const box = document.getElementById("add_form_pr");
+        box.style.display = "none";
+    }
+    else if (option === 'goal_add_cancel') {
+        const box = document.getElementById("add_form_goal");
+        box.style.display = "none";
+    }
 }
 
 function Add_popup(option) {
@@ -51,6 +62,8 @@ function Add_popup(option) {
         const box = document.getElementById("add_form_pr");
         box.style.display = "flex";
     }
+    
+    
     else if (option === 'goal'){
         const box = document.getElementById("add_form_goal");
         box.style.display = "flex";
@@ -180,6 +193,26 @@ function Submit(option){
     MakeRow(...a)
     console.log("Success I hope")
 }
+
+
+
+function Calc(option){  // for the pace calculator
+    const a = Add_data(option);
+    const distance = a[0];
+    const sec = a[1];
+    const pace = CalculatePace(distance, sec);
+
+    const tableEl = document.querySelector("#calc_table");
+    const rowEl = document.createElement('tr');
+    rowEl.textContent = "Pace: " + pace;
+    tableEl.appendChild(rowEl);
+
+
+}
+
+// fix css for Pace calculator popup
+
+
 
 // how to make the popups disappear if click anywhere else? 
 // Can I have a function that updates the HTML file? How does that work?

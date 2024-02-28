@@ -67,7 +67,8 @@
             </form>
         </td>
         <td>
-            <button type = "submit" onclick="Submit('pr')">Submit</button>
+            <button type = "submit" onclick="Submit('pr')">Add</button>
+            <button id = "pr_add_cancel" type = "submit" onclick="popdown('pr_add_cancel')">Cancel</button>
         </td>
         </div>
    <!-- ----------------- PR tables ----------------------- -->
@@ -131,6 +132,7 @@
         </td>
         <td>
             <button type = "submit" onclick="Submit('goal')">Submit</button>
+            <button id = "goal_add_cancel"  onclick="popdown('goal_add_cancel')">Cancel</button>
         </td>
         </div>
     
@@ -165,27 +167,35 @@
 <!----------------Calculator Section ---------------->
 <div id = "calc_div" class = "stat_div">
     <h2>Pace Calculator</h2>
-    <table class= "stat_table">
-        <tr class = "table_hdrs">
-            <th>Distance</th>
-            <th>Time</th>
-            <th>Pace</th>
-        </tr>
-        <tr>
-                <td>
-                    <form action="" id = "getdist">
-                        <input type="text">
-                    </form>
-                </td>
-                <td>
-                    <form action="" id = "gettime">
-                        <input type="text">
-                    </form>
-                </td>
-                <td>
-                    PaceGoesHere
-                </td>
-        </tr>
+    
+    <div><button class = "edit" onclick = "popup('calc')">Go</button></div>
+
+    <div class = "add_form" id = "calc_form">
+        <table id = "calc_table">
+        <td>
+            <form class = "popup_in" id = "getdist">
+                <input type="text" id = "calc_dist" placeholder="distance:">
+            </form>
+        </td>
+        <td>
+            <form class = "popup_in" id = "get_hours">
+                <input type="text" id = "calc_hours" placeholder="hours">
+            </form> 
+        </td>
+        <td>
+            <form class = "popup_in" id = "get_minutes">
+                <input type="text" id = "calc_minutes" placeholder="minutes">
+            </form>
+        </td>
+        <td>
+            <form class = "popup_in" id = "get_seconds">
+                <input type="text" id = "calc_seconds" placeholder="seconds">
+            </form>
+        </td>
+        <td>
+            <button type = "submit" onclick="Calc('calc')">Submit</button>
+        </td>
+        </div>
     </table>
 </div>
 </body>
@@ -198,3 +208,5 @@
     <p class="pfoot"><a id="githubfoot" href="https://github.com/zackjsorensen/startup">Github</a></p>
     
     </footer>
+
+    
