@@ -37,18 +37,22 @@ function popdown(option) {
     if(option === 'pr') {                 // this needs to be simplified. Gosh. 
         const box = document.getElementById("prs_popup");
         box.style.display = "none";
+        document.querySelectorAll(".del").forEach(a=>a.style.display = "none");
     }
     else if (option === 'goal'){
         const box = document.getElementById("goals_popup");
         box.style.display = "none";
+        document.querySelectorAll(".del").forEach(a=>a.style.display = "none");
     }
     else if (option === 'pr_add_cancel') {
         const box = document.getElementById("add_form_pr");
         box.style.display = "none";
+        document.querySelectorAll(".del").forEach(a=>a.style.display = "none");
     }
     else if (option === 'goal_add_cancel') {
         const box = document.getElementById("add_form_goal");
         box.style.display = "none";
+        document.querySelectorAll(".del").forEach(a=>a.style.display = "none");
     }
     else if (option === 'calc_popup') {
         const box = document.getElementById(option);
@@ -334,6 +338,21 @@ function Remove(row) {
     }
 
     localStorage.setItem(option, JSON.stringify(newdata));
+
+}
+
+function Del(option) { // makes delete buttons visible
+    
+    if (option === 'pr') {
+        document.querySelectorAll(".del").forEach(a=>a.style.display = "flex");
+        
+    }
+    
+    
+    else if (option === 'goal'){
+        const box = document.getElementById("del_goal");
+        box.style.display = "flex";
+    }
 
 }
 

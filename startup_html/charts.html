@@ -38,7 +38,7 @@
         <div class = "popup" id = "prs_popup">
             <div><div id = "rightx"><button class = "close" id = "close_prs" onclick = "popdown('pr')">X</button></div></div>
             <div><button class = "add" id = "add_pr" onclick = "Add_popup('pr')">Add</button></div>
-            <div><button class = "update" id = "update_pr">Update</button></div>
+            <div><button  id = "del_pr" onclick = "Del('pr')">Remove</button></div>
           
             
         </div>
@@ -96,7 +96,7 @@
     <div class = "popup" id = "goals_popup">
         <div><button class = "close" id = "close_goals" onclick = "popdown('goal')">X</button></div>
         <div><button class = "add" id = "add_goal" onclick = "Add_popup('goal')">Add</button></div>
-        <div><button class = "update" id = "update_goal">Update</button></div>
+        <div><button  id = "del_pr" onclick = "Del('pr')">Remove</button></div>
         
     </div>
     <!--------- add goal popup/form ---------->
@@ -123,7 +123,7 @@
         </td>
         <td>
             <button type = "submit" onclick="Submit('goal')">Submit</button>
-            <button id = "goal_add_cancel"  onclick="popdown('goal_add_cancel')">Cancel</button>
+            <button id = "goal_add_cancel"  onclick="popdown('goal_add_cancel')">Close</button>
         </td>
         </div>
     
