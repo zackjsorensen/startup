@@ -44,3 +44,11 @@ I have used CSS to style my product including
 - Application Elements - Used 3 main colors for simplicity and readability, made the tables striped so individual rows stand out
 - Application text content - simple sans serif font used the whole time
 - Application images - made my image transparent on the feed page
+
+  ## Javascript Deliverable
+  Using JavaScript my website now works for a single user
+
+- login - Entering a value into login/password takes you to the main page (My Stats page)
+- database - goals and personal records are stored and loaded from localStorage, as a placeholder for the database technology
+- WebSocket - with setInterval I generate random notifications as a placeholder for future WebSocket notifications about friends' goals and PRs
+- application logic - JS lets me bring in popups to enter new data into a field, generate new tables rows of data when the user inputs a new goal or record, remove a row from the table and local storage, and use basic Math functions to calculate a race pace given parameters entered by the user. 
