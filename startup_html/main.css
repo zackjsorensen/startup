@@ -149,6 +149,8 @@ button {
     flex-direction: column;
 }
 
+
+
 #target_pace {
     background-color: white;
 }
@@ -211,6 +213,17 @@ th, td {
     display: block;
 }
 
+.del {
+    /* display: none; */
+    width: 20px;
+    height: 20px ;
+    background-color: white;
+    color: red;
+    
+}
+.delcell{
+    background-color: rgb(1, 148, 197);
+}
 
 
 

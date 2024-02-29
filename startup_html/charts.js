@@ -112,7 +112,7 @@ function Add_data (option) {
 
 
 function MakeRow(dist, sec, option){
-    const sel = "#" + option + "s";
+    const sel = "#" + option;
     tableEl = document.querySelector(sel);
     let time = 0;
     if (sec > 3599){
@@ -127,10 +127,14 @@ function MakeRow(dist, sec, option){
     const distEl = document.createElement('td');
     const timeEl = document.createElement('td');
     const paceEl = document.createElement('td');
+    const delEl = document.createElement('td');
 
     distEl.textContent = distance;
     timeEl.textContent = time;
     paceEl.textContent = pace;
+    delEl.setAttribute('class', 'delcell')
+    delEl.innerHTML = " <button class = 'del' onclick='Remove(this)'>x</button>";
+
 // row data in an array to be stringified: 
     let toStore = [distance, time, pace];
     SaveData(toStore, option);
@@ -138,8 +142,11 @@ function MakeRow(dist, sec, option){
     rowEl.appendChild(distEl);
     rowEl.appendChild(timeEl);
     rowEl.appendChild(paceEl);
+    rowEl.appendChild(delEl);
 
     tableEl.appendChild(rowEl);
+
+    
 
 }
 // options for option are: goal, pr, calc
@@ -260,20 +267,74 @@ function Load(option){
         const distEl = document.createElement('td');
         const timeEl = document.createElement('td');
         const paceEl = document.createElement('td');
+        const delEl = document.createElement('td');
 
         distEl.textContent = row[0]; 
         timeEl.textContent = row[1]; 
         paceEl.textContent = row[2];
+        delEl.setAttribute('class', 'delcell')
+        delEl.innerHTML = " <button class = 'del' onclick='Remove(this)'>x</button>";
 
         rowEl.appendChild(distEl);
         rowEl.appendChild(timeEl);
         rowEl.appendChild(paceEl);
+        rowEl.appendChild(delEl);
 
-        const sel = "#" + option + "s";
+        const sel = "#" + option;
         tableEl = document.querySelector(sel);
         tableEl.appendChild(rowEl);
 
     }
+}
+
+function RemoveFromStorage(option, target){
+    let data = [];
+    const dataText = localStorage.getItem(option);
+    if (dataText) {  // if there's anything in localstorage prs, get it. 
+        data = JSON.parse(dataText);
+    }
+    const index = data.indexOf(target);
+    console.log(index);
+    if (index > -1){
+        data.splice(index, 1);
+    }
+    console.log(data);
+
+}
+
+function Remove(row) {
+
+    var p = row.parentNode.parentNode;
+    const cells = p.getElementsByTagName('td');
+    let target = [];
+    for (cell of cells){
+        console.log(cell.innerHTML + "see? ");
+        target.push(cell.innerHTML);
+    }
+    option = p.parentElement.getAttribute('id')
+    RemoveFromStorage(option, target);
+
+    p.parentNode.removeChild(p);
+    // then use the values still in the table to reconstruct/update option
+    const tab = document.getElementById(option);
+    let newdata = [];
+    for (let j = 0, r; r = tab.rows[j]; j++){
+        let a = [];
+        if (j > 0){
+        for (let i = 0, cell; cell = r.cells[i]; i++){
+        
+            if (i < 3){
+            a.push(cell.innerHTML);
+            console.log(a);
+            }
+        }
+        newdata.push(a);
+        console.log(newdata);}
+
+    }
+
+    localStorage.setItem(option, JSON.stringify(newdata));
+
 }
 
 
