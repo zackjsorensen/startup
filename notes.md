@@ -121,3 +121,28 @@ The browser lets external code manipulate HTML via the "document" global variabl
 Useful functions include querySelctorAll, createElement, appendChild, removeChild to add new elements  
 You can attach an event listener function to any DOM element. It is called when that event happens.  
 
+### Web Service  
+## Noe.js
+"You can never understand everything, but you should push yourself ot understand the system." - Ryan Dahl  
+Chrome has a JS interpreter in it  
+Node.js lets you run JS without a browser, lets you see how the chrome V8 engine would handle it, kinda like chrome debugger console/terninal  
+Can use Node.js as a debugger in VS code
+Node - the interpreter, program that runs the JS  
+NVM - Node version manager - lets you upgrade version real easy  - need to install separately with windows-nvm program - not super necessary. 
+NPM - Node Package Manager - PIP for JS, import other people's packages.  
+How to use?   
+- npm init -y // runs default commands
+- npm run start // lets you run the code.
+You don't want to commit all the source code. Keep it local. gitignore
+Can use open source, Node.js, common js to get a 3rd party server
+
+## We gonna write our server with Node.js  
+We will write an https servece that listens on a port and returns the HTML and renders it  
+require ('http') uses built in package  
+You can then use its functions  
+Tell it what port to listen on. What's with port numbers?  
+localhost:port_number to see your service.  
+
+- What we write here will take a request and return our html, css, js. Caddy is just a router for different ports, takes simon. and sends it to the right port. 
+
+
