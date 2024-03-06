@@ -149,8 +149,9 @@ localhost:port_number to see your service.
 - Visualize the design.
 - What are my endpoints? (functions you can call on backend)
 - For Simon
-      - Create account, login, logout
-      - Get user, Get scores
-      - Get scores
-    - 
+- Create account, login, logout
+- Get user, Get scores, Get scores
+Use the HTTP verbs in express - get, put, post, delete
+
+#
 
