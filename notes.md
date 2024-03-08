@@ -145,4 +145,13 @@ localhost:port_number to see your service.
 
 - What we write here will take a request and return our html, css, js. Caddy is just a router for different ports, takes simon. and sends it to the right port. 
 
+### Service Design  
+- Visualize the design.
+- What are my endpoints? (functions you can call on backend)
+- For Simon
+- Create account, login, logout
+- Get user, Get scores, Get scores
+Use the HTTP verbs in express - get, put, post, delete
+
+#
 
