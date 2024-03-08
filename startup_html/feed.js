@@ -7,6 +7,16 @@ Load some dummy notifications, write code to generate the table data for it
 
 */
 
+// Fetch a quote
+const url = "https://api.quotable.io/random";
+
+fetch(url)
+    .then((x) => x.json())
+    .then((response)=> {
+        document.querySelector("#quote").textContent = JSON.stringify(response.content, null, " ") + " -" + response.author;
+    })
+
+
 function Generate(){  // generate dummy notifications
 const stuff = [
     "Josh set a pr of 12 minutes in the mile!",
