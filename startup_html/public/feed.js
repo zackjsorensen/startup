@@ -16,7 +16,6 @@ fetch(url)
         document.querySelector("#quote").textContent = JSON.stringify(response.content, null, " ") + " -" + response.author;
     })
 
-
 function Generate(){  // generate dummy notifications
 const stuff = [
     "Josh set a pr of 12 minutes in the mile!",
