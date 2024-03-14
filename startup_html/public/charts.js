@@ -257,11 +257,14 @@ function Calc(option){  // for the pace calculator
 
 }
 
-function Load(option){
+async function Load(option){
+    
     
     console.log("Should be cleared now");
     let data = [];
-    const dataText = localStorage.getItem(option);
+    // const dataText = localStorage.getItem(option);
+    const dataText = await fetch("/goal");
+    console.log(dataText.body);
     if (dataText) {  // if there's anything in localstorage prs, get it. 
         data = JSON.parse(dataText);
     }
