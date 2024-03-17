@@ -1,21 +1,4 @@
-// plan - what do I need? 
 
-// Edit button
-//    Pops up alert with options
-//      Add
-    //      Opens new box entry, saves new data, calculates pace, generates new row
-/*      Update
-            Lets you select one of the rows, lets you input new time only, generates new row
-        Remove
-            Lets you select one of the rows, removes it (nothing to remove)
-        Close
-            Closes the pop up menu without doing anything else
-
-    Same por Goals Edit button
-
-    Pace Calculator
-        Distance and Time stored, pace calculated and put in html
-*/
 
 function popup(option) {
     if(option === 'pr') {
@@ -263,10 +246,12 @@ async function Load(option){
     console.log("Should be cleared now");
     let data = [];
     // const dataText = localStorage.getItem(option);
-    const dataText = await fetch("/goal");
-    console.log(dataText.body);
+    const response = await fetch("/goal");
+    console.log(response);
+    const dataText = await response.json();
+    console.log(dataText);
     if (dataText) {  // if there's anything in localstorage prs, get it. 
-        data = JSON.parse(dataText);
+        data = JSON.parse(dataText.json);
     }
     
     for (row of data){

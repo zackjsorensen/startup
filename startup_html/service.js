@@ -9,17 +9,16 @@ app.use(express.json());
 
 // Serve up the frontend static content hosting
 app.use(express.static('public'));
-
 const goalRouter = express.Router();
 app.use(`/goal`, goalRouter);
 
 // post, get, delete goals
 
 goalRouter.get('/', (_req, res) => {
-res.send(JSON.stringify(goals));
+res.send(goals)
 });
 
-console.log(5+3);
+
 
 app.listen(port, () => {
     console.log(`Listening on port ${port}`);
@@ -27,3 +26,4 @@ app.listen(port, () => {
 
 let goals = [5, "0:30:33", "04:33"];
 
+ 
