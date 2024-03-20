@@ -14,8 +14,10 @@ app.use(express.json());
 app.use(express.static('public'));
 const goalRouter = express.Router();
 app.use(`/goal`, goalRouter);
+const prRouter = express.Router();
+app.use('/pr', prRouter);
 
-// post, get, delete goals
+// Get, post goals
 
 goalRouter.get('/', (_req, res) => {
 res.send(goals)
@@ -31,10 +33,24 @@ goalRouter.post('/', (_req, res) => {
   res.send(goals);
 });
 
-goalRouter.delete('/', (_req, res) => {
-  // delete goal here
-  res.send(goals);
-});
+// // Get, post prs
+
+// goalRouter.get('/', (_req, res) => {
+//   res.send(prs)
+//   });
+  
+//   goalRouter.post('/', (_req, res) => {
+//     // receive and update here
+//     console.log("PRs saved to service memory:");
+   
+//     prs = (_req.body);
+//     console.log(prs);
+    
+//     res.send(prs);
+//   });
+  
+
+
 
 
 
