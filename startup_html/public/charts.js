@@ -1,5 +1,6 @@
 
 
+
 function popup(option) {
     if(option === 'pr') {
         const box = document.getElementById("prs_popup");
@@ -15,6 +16,11 @@ function popup(option) {
     }
 
 }
+
+
+// problem -- stuff is getting lost -- data not recently effected is lost -- has to do with localStorage being cleared
+// But - if I don't clear it I run into some issues of extra data from previous tests
+// Although that shouldn't be a problem for users
 
 function popdown(option) {
     if(option === 'pr') {                 // this needs to be simplified. Gosh. 
@@ -367,9 +373,10 @@ const data = localStorage.getItem(option);
 
 }
 
-
 Load("pr");
 Load("goal");
+
+
 // how to make the popups disappear if click anywhere else? 
 // Can I have a function that updates the HTML file? How does that work?
 //     I guess I need to load the data, either from database, or localstorage

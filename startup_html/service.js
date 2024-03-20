@@ -35,11 +35,11 @@ goalRouter.post('/', (_req, res) => {
 
 // Get, post prs
 
-goalRouter.get('/', (_req, res) => {
+prRouter.get('/', (_req, res) => {
   res.send(prs)
   });
   
-  goalRouter.post('/', (_req, res) => {
+  prRouter.post('/', (_req, res) => {
     // receive and update here
     console.log("PRs saved to service memory:");
    
