@@ -246,12 +246,12 @@ async function Load(option){
     console.log("Should be cleared now");
     let data = [];
     // const dataText = localStorage.getItem(option);
-    const response = await fetch("/goal");
+    const response = await fetch(`/${option}`);
     console.log(response);
     const dataText = await response.json();
     console.log(dataText);
     if (dataText) {  // if there's anything in localstorage prs, get it. 
-        data = JSON.parse(dataText.json);
+        data = dataText;
     }
     
     for (row of data){
@@ -338,8 +338,31 @@ function Del(option) { // makes delete buttons visible
     
     
     else if (option === 'goal'){
-        const box = document.getElementById("del_goal");
-        box.style.display = "flex";
+        document.querySelectorAll(".del").forEach(a=>a.style.display = "flex");
+        
+    }
+
+}
+
+// save scores to service
+async function Save(option) {
+// use localstorage to update option array in service memory
+const data = localStorage.getItem(option);
+
+
+    try {
+        await fetch(`/${option}`, {
+            method: 'POST',
+            headers: {'content-type': 'application/json'},
+            body: data
+        });
+
+    }
+
+
+
+    catch{
+        console.log("Error saving scores");
     }
 
 }
