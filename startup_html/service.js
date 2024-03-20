@@ -33,21 +33,21 @@ goalRouter.post('/', (_req, res) => {
   res.send(goals);
 });
 
-// // Get, post prs
+// Get, post prs
 
-// goalRouter.get('/', (_req, res) => {
-//   res.send(prs)
-//   });
+goalRouter.get('/', (_req, res) => {
+  res.send(prs)
+  });
   
-//   goalRouter.post('/', (_req, res) => {
-//     // receive and update here
-//     console.log("PRs saved to service memory:");
+  goalRouter.post('/', (_req, res) => {
+    // receive and update here
+    console.log("PRs saved to service memory:");
    
-//     prs = (_req.body);
-//     console.log(prs);
+    prs = (_req.body);
+    console.log(prs);
     
-//     res.send(prs);
-//   });
+    res.send(prs);
+  });
   
 
 
