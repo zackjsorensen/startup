@@ -153,5 +153,11 @@ localhost:port_number to see your service.
 - Get user, Get scores, Get scores
 Use the HTTP verbs in express - get, put, post, delete
 
-#
-
+### Websocket  
+HTTP - great at making client-server requests  
+But not at sending messages between clients or sending notifications - it has to wait for a request - not efficient at all
+For that, we use Websocket
+- It piggy-bakcs on HTTP - client sends HTTP request to change connection protocol to websocket
+- Server sends back if protocol succesfully switched. Brilliant idea, use what you got and build on it
+- npm install ws -- wraps it, makes it easier
+- I will probably need a pingpong setup - see simon
