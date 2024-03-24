@@ -51,4 +51,12 @@ I have used CSS to style my product including
 - login - Entering a value into login/password takes you to the main page (My Stats page)
 - database - goals and personal records are stored and loaded from localStorage, as a placeholder for the database technology
 - WebSocket - with setInterval I generate random notifications as a placeholder for future WebSocket notifications about friends' goals and PRs
-- application logic - JS lets me bring in popups to enter new data into a field, generate new tables rows of data when the user inputs a new goal or record, remove a row from the table and local storage, and use basic Math functions to calculate a race pace given parameters entered by the user. 
+- application logic - JS lets me bring in popups to enter new data into a field, generate new tables rows of data when the user inputs a new goal or record, remove a row from the table and local storage, and use basic Math functions to calculate a race pace given parameters entered by the user.
+
+  ## Service Deliverable
+  Backend server and api calls
+  - Node.js/Express HTTP service - done, written in service.js
+  - Static middleware for frontend - done, service.js serves up files form public
+  - Calls to third party endpoints - I bring in a random inspirational quote on my feed page.
+  - Backend service endpoints - Endpoints to get and update user's goals and pr
+  - Frontend calls service endpoints - used fetch to implement my endpoints
