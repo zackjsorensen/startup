@@ -4,8 +4,9 @@ const express = require('express');
 const app = express();
 const DB = require('./database.js');
 
-let prs = [];
-let goals = [];
+// we handle all http requests here, if needed we call functions in database.js 
+//                                                   to communicate with mongo
+
 
 // The service port. In production the frontend code is statically hosted by the service on the same port.
 const port =  4000;
@@ -15,15 +16,19 @@ app.use(express.json());
 
 // Serve up the frontend static content hosting
 app.use(express.static('public'));
-const goalRouter = express.Router();
-app.use(`/goal`, goalRouter);
-const prRouter = express.Router();
-app.use('/pr', prRouter);
+const apiRouter = express.Router();
+app.use(`/api`, goalRouter);
+// const prRouter = express.Router();
+// app.use('/pr', prRouter);
 
 // Get, post goals
 
-goalRouter.get('/', (_req, res) => {
-res.send(goals)
+
+//test router to return stats given an email
+apiRouter.get('/stats', (_req, res) => {
+  const username = _req.body.email
+  const stats = DB.getUserStats(username);
+  console.log(stats);
 });
 
 goalRouter.post('/', (_req, res) => {
@@ -51,19 +56,13 @@ prRouter.get('/', (_req, res) => {
     
     res.send(prs);
   });
-  
-
-
-
-
-
 
 
 app.listen(port, () => {
     console.log(`Listening on port ${port}`);
   });
 
-// let goals = [[5, "0:30:33", "04:33"], [2, "0:12:23", "06:22"]];
+
 
 
  

@@ -20,5 +20,6 @@
   "directories": {
     "test": "tests"
   },
+  "devDependencies": {},
   "description": ""
 }
