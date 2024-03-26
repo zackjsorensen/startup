@@ -161,3 +161,13 @@ For that, we use Websocket
 - Server sends back if protocol succesfully switched. Brilliant idea, use what you got and build on it
 - npm install ws -- wraps it, makes it easier
 - I will probably need a pingpong setup - see simon
+
+### MongoDB
+We will use a third-party database, to which we can upload and retrieve JSON objects  
+Made up of collections ( arrays of Javascript Objects, each has a unique ID  
+- Use MongoClient to make a client connection
+- Then, you can get a database object, from that a collection object
+- Collection object allows you to insert and query for documents
+- use the insertOne func on the collection object to add a new object
+- Use find funciton on the collection object, with optional params of query and options
+
