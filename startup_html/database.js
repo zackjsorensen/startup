@@ -11,40 +11,42 @@ const client = new MongoClient(url);
 const db = client.db('startup');
 const coll = db.collection('startup');
 
-console.log(1+1);
 
-(async function testConnection() {
-  await client.connect();
-  await db.command({ ping: 1 });
-})().catch((ex) => {
-  console.log(`Unable to connect to database with ${url} because ${ex.message}`);
-  process.exit(1);
-});
+
+
 
 // functions interacting with mongodb
 
 // getuser(email)
 function getUser(email){
+  return coll.findOne({email: email});
+}
 
+function getUserByToken(token){
+  return coll.findOne({token: token});
 }
 
 // getuserbytoken(token) -- cookie shortcut
 
 //createuser(email, password)
-function createUser(email, password) {
+async function createUser(email, password) {
+  // we need to hash the pash
+  const hashPash = await bcrypt.hash(password, 10);
 
-}
 
-// getUserStats
-function getUserStats(username) {
-  return coll.findOne({username: username});
+  const user = {
+    email: email,
+    password: hashPash,
+    token: uuid.v4()
+  };
+  await coll.insertOne(user);
+  return user;
 
-}
-
-function tester() {
-  console.log(coll.findOne({username: "dummy"}));
   
+
 }
+
+
 //add pr
 
 //remove pr
@@ -58,5 +60,6 @@ function tester() {
 //get goals
 
 module.exports = {
-  getUserStats
+  getUser,
+  createUser
 };

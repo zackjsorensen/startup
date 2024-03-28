@@ -3,27 +3,24 @@ const bcrypt = require('bcrypt');
 const express = require('express');
 const app = express();
 const DB = require('./database.js');
-
-// we handle all http requests here, if needed we call functions in database.js 
-//                                                   to communicate with mongo
-
-
-// The service port. In production the frontend code is statically hosted by the service on the same port.
 const port =  4000;
+
+// we handle all http requests here, if needed we call functions in database.js to communicate with mongo
 
 // JSON body parsing using built-in middleware
 app.use(express.json());
+app.use(cookieParser());
 
 // Serve up the frontend static content hosting
 app.use(express.static('public'));
+app.set('trust proxy', true);
+
 const apiRouter = express.Router();
 app.use(`/api`, apiRouter);
-// const prRouter = express.Router();
-// app.use('/pr', prRouter);
 
-// Get, post goals
 
-// CreateAuth token for a new user
+
+// Create Auth token for a new user
 apiRouter.post('/auth/create', async (req, res) => {
   if (await DB.getUser(req.body.email)) {
     res.status(409).send({ msg: 'Existing user' });
@@ -32,53 +29,39 @@ apiRouter.post('/auth/create', async (req, res) => {
 
     // Set the cookie
     setAuthCookie(res, user.token);
-
-    res.send({
-      id: user._id,
-    });
+    res.send({ id: user._id});
+    return;
   }
 });
 
-//test router to return stats given an email
-apiRouter.get('/stats', (_req, res) => {
-  const username = _req.body.email
-  const stats = DB.getUserStats(username);
-  console.log(stats);
-  res.send("Testing Testing"); // works
-});
-
-apiRouter.get('/test', async(_req, res) => {
-  const holder = await DB.getUserStats("dummy")
-  console.log(holder);
-  res.send(holder);
-});
-
-
-// goalRouter.post('/', (_req, res) => {
-//   // receive and update here
-//   console.log("Goals saved to service memory:");
- 
-//   goals = (_req.body);
-//   console.log(goals);
-  
-//   res.send(goals);
-// });
-
-// // Get, post prs
-
-// prRouter.get('/', (_req, res) => {
-//   res.send(prs)
-//   });
-  
-//   prRouter.post('/', (_req, res) => {
-//     // receive and update here
-//     console.log("PRs saved to service memory:");
-   
-//     prs = (_req.body);
-//     console.log(prs);
+// Login
+apiRouter.post('/auth/login', async (req, res) => {
+  const user = await DB.getUser(req.body.email);
+  if (user) {
+    console.log("User found, checking password");
+    // check password
+    if (await bcrypt.compare(req.body.password, user.password)) {
+      // we send them a cookie with the id found in their mongo doc
+      console.log("password matches, preparing cookie...");
+      setAuthCookie(res, user.token);
+      res.send({ id: user._id});
+      return;
+    }
+    res.status(401).send({msg: 'Bad Password'});
     
-//     res.send(prs);
-//   });
+  } else {
+  // either bad username or bad password
+  res.status(401).send({msg: 'Unauthorized'});}
+});
+
+function setAuthCookie(res, authToken) {
+  res.cookie('token', authToken, {
+    secure: true,
+    httpOnly: true,
+    sameSite: 'strict',
+  });
+}
+
 
 
 app.listen(port, () => {

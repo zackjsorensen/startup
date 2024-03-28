@@ -26,6 +26,7 @@ async function createOrLogin(endpoint) {
             'Content-type': 'application/json; charset=UTF-8',
         },
     });
+    console.log(response);
     
     if (response.ok) {
         window.location.href = 'charts.html';
@@ -54,4 +55,6 @@ async function getUser(email) {
 
     return null;
 }
-    
+
+
+// TODO: in HTML, make sure all these functions are properly called
