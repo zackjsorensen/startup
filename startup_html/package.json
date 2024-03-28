@@ -1,7 +1,8 @@
 {
   "name": "startup_html",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "",
+  "main": "database.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -9,17 +10,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bcrpyt": "^2.0.0",
     "bcrypt": "^5.1.1",
     "cookie-parser": "^1.4.6",
-    "espress": "^0.0.0",
-    "express": "npm:Express@^3.0.1",
-    "Express": "^3.0.1",
-    "mongodb": "^6.5.0"
-  },
-  "directories": {
-    "test": "tests"
-  },
-  "devDependencies": {},
-  "description": ""
+    "express": "^4.19.2",
+    "mongodb": "^6.5.0",
+    "uuid": "^9.0.1"
+  }
 }
