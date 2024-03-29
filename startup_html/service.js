@@ -3,6 +3,7 @@ const bcrypt = require('bcrypt');
 const express = require('express');
 const app = express();
 const DB = require('./database.js');
+const { getCiphers } = require('crypto');
 const port =  4000;
 
 // we handle all http requests here, if needed we call functions in database.js to communicate with mongo
@@ -62,6 +63,17 @@ function setAuthCookie(res, authToken) {
   });
 }
 
+apiRouter.get('/prs', async (req, res) => {
+  const stats = await DB.getUserByToken(req.cookies['token']); // returns the user's doc
+  const prs = stats.prs;
+  res.send(prs);
+})
+
+apiRouter.get('/goals', async (req, res) => {
+  const stats = await DB.getUserByToken(req.cookies['token']); // returns the user's doc
+  const goals = stats.goals;
+  res.send(goals);
+})
 
 
 app.listen(port, () => {

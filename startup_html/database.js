@@ -26,13 +26,10 @@ function getUserByToken(token){
   return coll.findOne({token: token});
 }
 
-// getuserbytoken(token) -- cookie shortcut
-
 //createuser(email, password)
 async function createUser(email, password) {
   // we need to hash the pash
   const hashPash = await bcrypt.hash(password, 10);
-
 
   const user = {
     email: email,
@@ -41,11 +38,7 @@ async function createUser(email, password) {
   };
   await coll.insertOne(user);
   return user;
-
-  
-
 }
-
 
 //add pr
 
@@ -61,5 +54,6 @@ async function createUser(email, password) {
 
 module.exports = {
   getUser,
-  createUser
+  createUser,
+  getUserByToken
 };
