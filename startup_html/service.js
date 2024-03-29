@@ -65,14 +65,24 @@ function setAuthCookie(res, authToken) {
 
 apiRouter.get('/prs', async (req, res) => {
   const stats = await DB.getUserByToken(req.cookies['token']); // returns the user's doc
-  const prs = stats.prs;
-  res.send(prs);
+  if (stats) {
+    const prs = stats.prs;
+    res.send(prs);
+  } else {
+    res.send({msg: 'Unable to retrieve data'});
+  }
+  
 })
 
 apiRouter.get('/goals', async (req, res) => {
   const stats = await DB.getUserByToken(req.cookies['token']); // returns the user's doc
-  const goals = stats.goals;
-  res.send(goals);
+  if (stats) {
+    const goals = stats.goals;
+    res.send(goals);
+  } else {
+    res.send({msg: 'Unable to retrieve data'});
+  }
+  
 })
 
 
