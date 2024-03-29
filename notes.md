@@ -171,3 +171,12 @@ Made up of collections ( arrays of Javascript Objects, each has a unique ID
 - use the insertOne func on the collection object to add a new object
 - Use find funciton on the collection object, with optional params of query and options
 
+### React/Web Frameworks
+- JSX is hybrid of HTML and JS
+- We have to compile our code with Babel before deploying (Babel converts JSX to JS)
+- React gives you more modularized code.
+- Each React file is usually one component
+- Useful things to note:
+- const [color, setColor] = React.userState("red");  // lets you define attributes of the component, states
+- ReactDOM.render(JSX/HTML thingy here, document.querySelector("#id"));
+- React dynamically updates the DOM for you  
