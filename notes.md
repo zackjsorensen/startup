@@ -179,4 +179,10 @@ Made up of collections ( arrays of Javascript Objects, each has a unique ID
 - Useful things to note:
 - const [color, setColor] = React.userState("red");  // lets you define attributes of the component, states
 - ReactDOM.render(JSX/HTML thingy here, document.querySelector("#id"));
-- React dynamically updates the DOM for you  
+- React dynamically updates the DOM for you
+
+### Tool Chain  
+- Compilers and stuff to go from JSX to deployable JS, components not pages
+- npm run build
+- We don't want to debug frontend from dist dir, everything is compressed
+- So do npm run dev  -- lets you debug an unbundled version. 
