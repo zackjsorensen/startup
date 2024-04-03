@@ -185,4 +185,10 @@ Made up of collections ( arrays of Javascript Objects, each has a unique ID
 - Compilers and stuff to go from JSX to deployable JS, components not pages
 - npm run build
 - We don't want to debug frontend from dist dir, everything is compressed
-- So do npm run dev  -- lets you debug an unbundled version. 
+- So do npm run dev  -- lets you debug an unbundled version.
+  
+### React   
+- If we update one of the key things, that are passed as a hook or parameter, than React will automatically update that stuff f or us
+- Hook - when you set a userstate var - React knows, whenvever that changes, you need to update everywhere that's used
+- Prop - when a prop is passed as a parameter and that changes, React will go through and update the stuff dependent on that parameter  
+
