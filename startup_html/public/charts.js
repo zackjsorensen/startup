@@ -1,6 +1,6 @@
 
 
-
+// makes popup options visible when menu buttons are clicked
 function popup(option) {
     if(option === 'pr') {
         const box = document.getElementById("prs_popup");
@@ -22,6 +22,8 @@ function popup(option) {
 // But - if I don't clear it I run into some issues of extra data from previous tests
 // Although that shouldn't be a problem for users
 
+
+// makes popups go away
 function popdown(option) {
     if(option === 'pr') {                 // this needs to be simplified. Gosh. 
         const box = document.getElementById("prs_popup");
@@ -76,6 +78,7 @@ function Add_popup(option) {
 
 
 function Add_data (option) {
+    // Returns the user inputted data in an easy to calculate formatted array 
 // get the distance and time inputted by the user - gotta wait till they input data
     const dselector = "#" + option + "_dist";
     let distanceEl = document.querySelector(dselector);
@@ -247,7 +250,7 @@ function Calc(option){  // for the pace calculator
 }
 
 async function Load(option){
-    
+    // fetches user's data and generates the tables with it
     
     console.log("Should be cleared now");
     let data = [];
@@ -350,31 +353,52 @@ function Del(option) { // makes delete buttons visible
 
 }
 
-// save scores to service
-async function Save(option) {
-// use localstorage to update option array in service memory
-const data = localStorage.getItem(option);
 
-
-    try {
-        await fetch(`/${option}`, {
-            method: 'POST',
-            headers: {'content-type': 'application/json'},
-            body: data
-        });
+function IterTable(option) {
+    // gets the data from either prs or goals from the tables, updates localStorage, returns the array of parsed data
+    const tab = document.getElementById(option);
+    let newdata = [];
+    for (let j = 0, r; r = tab.rows[j]; j++){
+        let a = [];
+        if (j > 0){
+        for (let i = 0, cell; cell = r.cells[i]; i++){
+        
+            if (i < 3){
+            a.push(cell.innerHTML);
+            console.log(a);
+            }
+        }
+        newdata.push(a);
+        console.log(newdata);}
 
     }
 
+    localStorage.setItem(option, JSON.stringify(newdata));
+    return newdata;
+}
 
-
-    catch{
+// save scores - sends a POST requests with new pr and goal data
+async function Save() {
+    const p = IterTable('prs');
+    const g = IterTable('goals');
+    
+    try {
+        await fetch(`/api/update/prs`, {
+            method: 'POST',
+            headers: {'content-type': 'application/json'},
+            body: {
+                goals: g,
+                prs: p
+            }
+        });
+    } catch {
         console.log("Error saving scores");
     }
 
 }
 
-Load("pr");
-Load("goal");
+Load("prs");
+Load("goals");
 
 
 // how to make the popups disappear if click anywhere else? 

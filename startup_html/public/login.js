@@ -8,7 +8,7 @@ async function create() {
 
 // endpoint is either /api/auth/create or /api/auth/login
 async function createOrLogin(endpoint) {
-    // get username and password, save to localStorage
+    // get username and password from userinput, save to localStorage
     const nameEl = document.querySelector("#username");
     const userName = nameEl.value;
     localStorage.setItem("username", userName);

@@ -40,20 +40,20 @@ async function createUser(email, password) {
   return user;
 }
 
-//add pr
+// update goals
+async function saveGoals(token, goals) {
+  await coll.updateOne(
+    {token:token},
+    { $set: {goals: goals}
+    }
+  )
+  return getUserByToken(token);
+}
 
-//remove pr
-
-//get prs
-
-//add goal
-
-//remove goal
-
-//get goals
 
 module.exports = {
   getUser,
   createUser,
-  getUserByToken
+  getUserByToken,
+  saveGoals
 };

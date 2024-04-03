@@ -71,7 +71,6 @@ apiRouter.get('/prs', async (req, res) => {
   } else {
     res.send({msg: 'Unable to retrieve data'});
   }
-  
 })
 
 apiRouter.get('/goals', async (req, res) => {
@@ -82,7 +81,20 @@ apiRouter.get('/goals', async (req, res) => {
   } else {
     res.send({msg: 'Unable to retrieve data'});
   }
-  
+})
+
+apiRouter.put('/save/goals', async (req, res)  => {
+  // TODO: make funciton to send request that has the goals in charts.js
+  const goals = req.body.goals;
+  const AuthCookieName = 'token';
+  console.log(req.cookies);
+  const user = await DB.saveGoals(req.cookies['token'], goals);
+  console.log(user);
+  if (user){
+    res.send(user);
+  } else {
+    res.send({msg: "Error saving goals"});
+  }
 })
 
 
