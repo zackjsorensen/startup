@@ -171,3 +171,24 @@ Made up of collections ( arrays of Javascript Objects, each has a unique ID
 - use the insertOne func on the collection object to add a new object
 - Use find funciton on the collection object, with optional params of query and options
 
+### React/Web Frameworks
+- JSX is hybrid of HTML and JS
+- We have to compile our code with Babel before deploying (Babel converts JSX to JS)
+- React gives you more modularized code.
+- Each React file is usually one component
+- Useful things to note:
+- const [color, setColor] = React.userState("red");  // lets you define attributes of the component, states
+- ReactDOM.render(JSX/HTML thingy here, document.querySelector("#id"));
+- React dynamically updates the DOM for you
+
+### Tool Chain  
+- Compilers and stuff to go from JSX to deployable JS, components not pages
+- npm run build
+- We don't want to debug frontend from dist dir, everything is compressed
+- So do npm run dev  -- lets you debug an unbundled version.
+  
+### React   
+- If we update one of the key things, that are passed as a hook or parameter, than React will automatically update that stuff f or us
+- Hook - when you set a userstate var - React knows, whenvever that changes, you need to update everywhere that's used
+- Prop - when a prop is passed as a parameter and that changes, React will go through and update the stuff dependent on that parameter  
+
