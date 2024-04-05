@@ -16,19 +16,22 @@ async function createOrLogin(endpoint) {
     const passEl = document.querySelector("#password");
     const password = passEl.value;
     localStorage.setItem("password", password);
+    console.log("credential gathered");
 
     // send to Server to create new user or login
     // we send a POST request with login info in the body as json
     const response = await fetch(endpoint, {
         method: 'post',
-        body: JSON.stringify({email:userName, password: password}),
+        body: JSON.stringify({email: userName, password: password}),
         headers: {
-            'Content-type': 'application/json; charset=UTF-8',
+            'Content-type': 'application/json; charset=UTF-8'
         },
     });
-    console.log(response);
+    console.log("Reponse received");
+    console.log(response.msg); // why am I never getting a response? 
     
     if (response.ok) {
+        console.log("Response is ok", response.msg);
         window.location.href = 'charts.html';
     } else {
         console.log("Error with login");
@@ -56,5 +59,14 @@ async function getUser(email) {
     return null;
 }
 
+async function test() {
+    const response = await fetch('api/test');
+    console.log(response);
+    console.log("Should have gotten response now");
 
-// TODO: in HTML, make sure all these functions are properly called
+}
+
+console.log("Testing log");
+
+
+// Response are never returning, but they return when I curl -- why?? 

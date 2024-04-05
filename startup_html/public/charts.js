@@ -383,8 +383,8 @@ async function Save() {
     const g = IterTable('goals');
     
     try {
-        await fetch(`/api/update/prs`, {
-            method: 'POST',
+        await fetch(`/api/save/stats`, {
+            method: 'PUT',
             headers: {'content-type': 'application/json'},
             body: {
                 goals: g,

@@ -31,7 +31,7 @@
 <main id = "chartsmain">
     <!----------------PR Section ---------------->
 <div id="pr_div" class="stat_div">
-   
+        <div><button  id = "save_button" onclick = "Save('pr')">Save All</button></div>
         <h2 class = "seg_headers">My PRs</h2>
         <div><button class = "edit" onclick = "popup('pr')">Edit</button></div>
         <!------- popup on edit --------->
@@ -39,12 +39,8 @@
             <div><div id = "rightx"><button class = "close" id = "close_prs" onclick = "popdown('pr')">X</button></div></div>
             <div><button class = "add" id = "add_pr" onclick = "Add_popup('pr')">Add</button></div>
             <div><button  id = "del_pr" onclick = "Del('pr')">Remove</button></div>
-            <div><button  id = "save_pr" onclick = "Save('pr')">Save All</button></div>
-            
         </div>
-
         <!-- Add input popup/form -->
-
         <div class = "add_form" id = "add_form_pr">
         <td>
             <form class = "popup_in" id = "getdist">
@@ -97,8 +93,6 @@
         <div><button class = "close" id = "close_goals" onclick = "popdown('goal')">X</button></div>
         <div><button class = "add" id = "add_goal" onclick = "Add_popup('goal')">Add</button></div>
         <div><button  id = "del_goal" onclick = "Del('goal')">Remove</button></div>
-        <div><button  id = "save_goal" onclick = "Save('goal')">Save All</button></div>
-        
     </div>
     <!--------- add goal popup/form ---------->
     <div class = "add_form" id = "add_form_goal">
