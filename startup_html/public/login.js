@@ -59,14 +59,9 @@ async function getUser(email) {
     return null;
 }
 
-async function test() {
-    const response = await fetch('api/test');
-    console.log(response);
-    console.log("Should have gotten response now");
-
-}
-
-console.log("Testing log");
-
 
 // Response are never returning, but they return when I curl -- why?? 
+// Does the quote api work?? 
+// -----------------------------------------------------------------
+// ------------------------------------------------------------------
+// -----------------------------------------------------------------

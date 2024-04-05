@@ -16,10 +16,8 @@ app.use(cookieParser());
 app.use(express.static('public'));
 app.set('trust proxy', true);
 
-const apiRouter = express.Router();
+var apiRouter = express.Router();
 app.use(`/api`, apiRouter);
-
-
 
 // Create Auth token for a new user
 apiRouter.post('/auth/create', async (req, res) => {
@@ -45,14 +43,17 @@ apiRouter.post('/auth/login', async (req, res) => {
       // we send them a cookie with the id found in their mongo doc
       console.log("password matches, preparing cookie...");
       setAuthCookie(res, user.token);
-      res.send({ id: user._id});
+      res.send({ id: user._id, msg: 'Successfully logged in'});
+      console.log("Succesfully logged in");
       return;
     }
     res.status(401).send({msg: 'Bad Password'});
-    
+    console.log("Bad password");
   } else {
   // either bad username or bad password
   res.status(401).send({msg: 'Unauthorized'});}
+  console.log("Unauthorized");
+  
 });
 
 function setAuthCookie(res, authToken) {
@@ -83,20 +84,19 @@ apiRouter.get('/goals', async (req, res) => {
   }
 })
 
-apiRouter.put('/save/goals', async (req, res)  => {
+apiRouter.put('/save/stats', async (req, res)  => {
   // TODO: make funciton to send request that has the goals in charts.js
   const goals = req.body.goals;
+  const prs = req.body.prs;
   const AuthCookieName = 'token';
   console.log(req.cookies);
-  const user = await DB.saveGoals(req.cookies['token'], goals);
+  const user = await DB.saveGoals(req.cookies['token'], goals, prs);
   console.log(user);
   if (user){
     res.send(user);
   } else {
-    res.send({msg: "Error saving goals"});
-  }
-})
-
+    res.send({msg: "Error saving data"});
+  }})
 
 app.listen(port, () => {
     console.log(`Listening on port ${port}`);

@@ -34,17 +34,19 @@ async function createUser(email, password) {
   const user = {
     email: email,
     password: hashPash,
-    token: uuid.v4()
+    token: uuid.v4(),
+    prs: "",
+    goals: ""
   };
   await coll.insertOne(user);
   return user;
 }
 
 // update goals
-async function saveGoals(token, goals) {
+async function saveGoals(token, goals, prs) {
   await coll.updateOne(
     {token:token},
-    { $set: {goals: goals}
+    { $set: {goals: goals, prs: prs}
     }
   )
   return getUserByToken(token);
