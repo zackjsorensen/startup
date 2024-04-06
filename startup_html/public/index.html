@@ -1,46 +1,41 @@
 <!DOCTYPE html>
-<html lang = "en"></html>
-<head>
-    <title>PR318 Login</title>
-    <link rel="stylesheet" href="main.css">
-    <script src = "login.js"></script>
-</head>
+<html lang="en">
 
-<body>
-<header >
-    <div id = "banner">
-        <h1 id = "logo" ><em>PR318</em></h1>
-    </div>
-    <nav>
-        <menu>
-            <a href="index.html" class = "navlink">Login</a>
-        </menu>
-    </nav>
+    <head>
+        <title>PR318 Login</title>
+        <link rel="stylesheet" href="main.css">
+        <script src="login.js"></script>
+    </head>
 
-</header>
+    <body>
+        <header>
+            <div id="banner">
+                <h1 id="logo"><em>PR318</em></h1>
+            </div>
+            <nav>
+                <menu>
+                    <a href="index.html" class="navlink">Login</a>
+                </menu>
+            </nav>
+        </header>
 
-<main id="indexmain">
+        <main id="indexmain">
+            <form id="loginset">
+                <p>
+                    <input type="text " id="username" placeholder="Username" value="Roar">
+                </p>
+                <p>
+                    <input type="text" id="password" placeholder="Password" value="roar">
+                </p>
+                <button onclick="event.preventDefault(); login()">Login</button>
+                <button onclick="event.preventDefault(); create()">Create</button>
+            </form>
+        </main>
 
-<form id = "loginset" method="get">
-<p>
-    
-    <input type="text " id = "username" placeholder="Username">
-</p>
-<p>
+        <footer>
+            <p class="pfoot">Author: Zack Sorensen</p>
+            <p class="pfoot"><a id="githubfoot" href="https://github.com/zackjsorensen/startup">Github</a></p>
+        </footer>
 
-<input type="text" id = "password" placeholder="Password">
-</p>
-<button type = "submit" onclick="login()">Login</button>
-<button type = "submit" onclick= "create()">Create</button>
-</form>
-
-
-</main>
-
-<footer>
-<p class="pfoot">Author: Zack Sorensen</p>
-<p class="pfoot"><a id="githubfoot" href="https://github.com/zackjsorensen/startup">Github</a></p>
-
-</footer>
-    
-</body>
+    </body>
+</html>
