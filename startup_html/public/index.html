@@ -7,7 +7,7 @@
         <script src="login.js"></script>
     </head>
 
-    <body>
+    <body onload="check()">
         <header>
             <div id="banner">
                 <h1 id="logo"><em>PR318</em></h1>
@@ -15,6 +15,7 @@
             <nav>
                 <menu>
                     <a href="index.html" class="navlink">Login</a>
+                    <a onclick="logout()">Logout</a>
                 </menu>
             </nav>
         </header>
@@ -27,8 +28,17 @@
                 <p>
                     <input type="text" id="password" placeholder="Password" value="roar">
                 </p>
-                <button onclick="event.preventDefault(); login()">Login</button>
-                <button onclick="event.preventDefault(); create()">Create</button>
+                <!-- Displayed when needing authentication -->
+            <div id = "loginControls" style="display: none;">
+                <button id = "b_login" onclick="event.preventDefault(); login()">Login</button>
+                <button id = "b_create" onclick="event.preventDefault(); create()">Create</button>
+            </div>
+            <!-- Displayed when ready to go -->
+            <div id = "playControls" style="display: none;">
+                <button id = "b_logout" style="display: none;" onclick="event.preventDefault(); logout()">Logout</button>
+                <button id = "b_go" style="display: none;" onclick="event.preventDefault(); go()">Go</button>
+            </div>
+                
             </form>
         </main>
 

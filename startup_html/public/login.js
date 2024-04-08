@@ -1,7 +1,18 @@
+async function check() {
+    const userName = localStorage.getItem('username');
+    if (userName) {
+      setDisplay('loginControls', 'none');
+      setDisplay('playControls', 'block');
+    } else {
+      setDisplay('loginControls', 'block');
+      setDisplay('playControls', 'none');
+    }
+  }
+
 async function login() {
     createOrLogin('/api/auth/login');
+    check();
 }
-
 
 async function create() {
     createOrLogin('/api/auth/create');
@@ -43,6 +54,7 @@ async function createOrLogin(endpoint) {
 }
 
 function logout() {
+    localStorage.removeItem('username');
     console.log("logging out");
     fetch('api/auth/logout', {
         method: 'delete',
@@ -61,3 +73,35 @@ async function getUser(email) {
 
     return null;
 }
+
+function go() {
+    window.location.href = 'charts.html';
+}
+
+function setDisplay(controlId, display) {
+    const playControlEl = document.querySelector(`#${controlId}`);
+    if (playControlEl) {
+      playControlEl.style.display = display;
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", function() {
+    check();
+  });
+
+// (async () => {
+//     const name = localStorage.getItem('username');
+//     if (name) {
+//         setDisplay('b_login', 'none');
+//         setDisplay('b_create', 'none');
+//         setDisplay('b_logout', 'block');
+//         setDisplay('b_go', 'block');
+//     } else {
+//         setDisplay('b_login', 'block');
+//         setDisplay('b_create', 'block');
+//         setDisplay('b_logout', 'none');
+//         setDisplay('b_go', 'none');
+//     }
+// })();
+
+

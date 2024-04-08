@@ -16,13 +16,6 @@ function popup(option) {
     }
 
 }
-
-
-// problem -- stuff is getting lost -- data not recently effected is lost -- has to do with localStorage being cleared
-// But - if I don't clear it I run into some issues of extra data from previous tests
-// Although that shouldn't be a problem for users
-
-
 // makes popups go away
 function popdown(option) {
     if(option === 'pr') {                 // this needs to be simplified. Gosh. 
@@ -75,8 +68,6 @@ function Add_popup(option) {
     // localStorage.setItem("time", timeEl.value);
 }
 
-
-
 function Add_data (option) {
     // Returns the user inputted data in an easy to calculate formatted array 
 // get the distance and time inputted by the user - gotta wait till they input data
@@ -105,7 +96,6 @@ function Add_data (option) {
     const sec = ToSeconds(hours, minutes, seconds);
     return [distance, sec, option]; // no se si va a funcionar
 }
-
 
 function MakeRow(dist, sec, option){
     const sel = "#" + option;
@@ -226,8 +216,6 @@ function Submit(option){
     console.log("Success I hope")
 }
 
-
-
 function Calc(option){  // for the pace calculator
     const a = Add_data('calc');
     const distance = a[0];
@@ -284,7 +272,6 @@ async function Load(option){
         const sel = "#" + option;
         tableEl = document.querySelector(sel);
         tableEl.appendChild(rowEl);
-
     }
 }
 
@@ -353,7 +340,6 @@ function Del(option) { // makes delete buttons visible
 
 }
 
-
 function IterTable(option) {
     // gets the data from either prs or goals from the tables, updates localStorage, returns the array of parsed data
     const tab = document.getElementById(option);
@@ -388,18 +374,11 @@ async function Save() {
             method: 'PUT',
             headers: {'content-type': 'application/json'},
             body: JSON.stringify(d)
-            
         });
     } catch {
         console.log("Error saving scores");
     }
-
 }
 
 Load("pr");
 Load("goal");
-
-
-// how to make the popups disappear if click anywhere else? 
-// Can I have a function that updates the HTML file? How does that work?
-//     I guess I need to load the data, either from database, or localstorage
