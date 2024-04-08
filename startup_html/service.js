@@ -84,6 +84,8 @@ apiRouter.get('/goals', async (req, res) => {
 
 apiRouter.put('/save/stats', async (req, res)  => {
   // TODO: make funciton to send request that has the goals in charts.js
+  console.log("Called saver");
+  console.log(req);
   const goals = req.body.goals;
   const prs = req.body.prs;
   const AuthCookieName = 'token';

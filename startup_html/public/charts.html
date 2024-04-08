@@ -31,7 +31,7 @@
 <main id = "chartsmain">
     <!----------------PR Section ---------------->
 <div id="pr_div" class="stat_div">
-        <div><button  id = "save_button" onclick = "Save('pr')">Save All</button></div>
+        <div><button  id = "save_button" onclick="event.preventDefault(); Save()">Save All</button></div>
         <h2 class = "seg_headers">My PRs</h2>
         <div><button class = "edit" onclick = "popup('pr')">Edit</button></div>
         <!------- popup on edit --------->

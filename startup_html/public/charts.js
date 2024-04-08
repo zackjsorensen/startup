@@ -255,7 +255,7 @@ async function Load(option){
     console.log("Should be cleared now");
     let data = [];
     // const dataText = localStorage.getItem(option);
-    const response = await fetch(`/${option}`);
+    const response = await fetch(`/api/${option}s`);
     console.log(response);
     const dataText = await response.json();
     console.log(dataText);
@@ -379,17 +379,16 @@ function IterTable(option) {
 
 // save scores - sends a POST requests with new pr and goal data
 async function Save() {
-    const p = IterTable('prs');
-    const g = IterTable('goals');
-    
+    const p = (IterTable('pr'));
+    const g = (IterTable('goal'));
+    const dum = { "Heyy":1};
+    const d = {"goals":g, "prs":p};
     try {
         await fetch(`/api/save/stats`, {
             method: 'PUT',
             headers: {'content-type': 'application/json'},
-            body: {
-                goals: g,
-                prs: p
-            }
+            body: JSON.stringify(d)
+            
         });
     } catch {
         console.log("Error saving scores");
@@ -397,8 +396,8 @@ async function Save() {
 
 }
 
-Load("prs");
-Load("goals");
+Load("pr");
+Load("goal");
 
 
 // how to make the popups disappear if click anywhere else? 
