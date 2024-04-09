@@ -60,3 +60,9 @@ I have used CSS to style my product including
   - Calls to third party endpoints - I bring in a random inspirational quote on my feed page.
   - Backend service endpoints - Endpoints to get and update user's goals and pr
   - Frontend calls service endpoints - used fetch to implement my endpoints
+ 
+  ## Login Deliverable
+  - MongoDB Atlas Database - created, data is stored in a collection named startup
+  - Endpoints to create a new user make a new document in MongoDB
+  - Authentication supported - Done - Login and Logout supported
+  - MongoDB stores user credentials and their goals they enter when the "Save All" button is pressed
