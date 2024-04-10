@@ -98,6 +98,11 @@ apiRouter.put('/save/stats', async (req, res)  => {
     res.send({msg: "Error saving data"});
   }})
 
+apiRouter.delete('/auth/logout', (_req, res) => {
+  res.clearCookie("token");
+  res.status(204).end();
+})
+
 app.listen(port, () => {
     console.log(`Listening on port ${port}`);
   });

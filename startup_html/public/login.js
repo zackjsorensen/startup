@@ -59,6 +59,7 @@ function logout() {
     fetch('api/auth/logout', {
         method: 'delete',
     }).then(() => (window.location.href = '/'));
+    // clearForm();
 }
 
 // makes a request with the email
@@ -87,8 +88,17 @@ function setDisplay(controlId, display) {
 
   document.addEventListener("DOMContentLoaded", function() {
     check();
+    clearForm();
   });
 
+  function clearForm() {
+    document.querySelector("#username").value = "";
+    document.querySelector("#password").value = "";
+    // nameEl.value = "test";
+    // passEl.value = "test";
+  }
+
+//   clearForm();
 // (async () => {
 //     const name = localStorage.getItem('username');
 //     if (name) {

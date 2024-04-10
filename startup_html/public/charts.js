@@ -415,6 +415,6 @@ function configureWebSocket() {
 Load("pr");
 Load("goal");
 // Do I need to implement this as a class? I don't think so... 
-configureWebSocket();
+// configureWebSocket();
 
-// can i have a multi-page web socket setup?? 
+// can i have a multi-page web socket setup?? -- YES
