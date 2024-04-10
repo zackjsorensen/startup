@@ -385,9 +385,10 @@ async function Save() {
 function configureWebSocket() {
     function broadcastEvent(from, type, value) {
         const event = {
-            from: from,
-            type: type,
-            value: value,
+            from: from,   // name of friend
+            type: type,   // goal or pr
+            time: time,  // goal/pr time
+            dist: dist,  // distance
         };
         this.socket.send(JSON.stringify(event));
     }
@@ -406,9 +407,9 @@ function configureWebSocket() {
         console.log("WS disconnected");
     };
     socket.onmessage = async (event) => {
-        const msg = JSON.parse(await event.data.text());
-
-    }
+        console.log("recieived: ", event.data.text);
+        // This page will just send messages, doesn't need to receive them
+    };
 }
 
 Load("pr");
