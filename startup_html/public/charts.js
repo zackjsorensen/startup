@@ -1,4 +1,5 @@
-
+const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
+    const socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
 
 // makes popup options visible when menu buttons are clicked
 function popup(option) {
@@ -132,7 +133,8 @@ function MakeRow(dist, sec, option){
 
     tableEl.appendChild(rowEl);
 
-    // TODO:broadcast the goal/pr here
+    // Broadcast the goal/pr here
+    broadcastEvent(localStorage.getItem("username"), option, time, distance);
 
 }
 // options for option are: goal, pr, calc
@@ -382,23 +384,12 @@ async function Save() {
 
 // TODO: write function displayMsg
 
-function configureWebSocket() {
-    function broadcastEvent(from, type, value) {
-        const event = {
-            from: from,   // name of friend
-            type: type,   // goal or pr
-            time: time,  // goal/pr time
-            dist: dist,  // distance
-        };
-        this.socket.send(JSON.stringify(event));
-    }
+function displayMsg() {
+    // TODO
+}
 
-    function displayMsg() {
-        // TODO
-    }
 
-    const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
-    const socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
+function doWebSocket(){
     socket.onopen = (event) => {
         // do I want to display connection succesful message?
         console.log("WS opened");
@@ -407,13 +398,28 @@ function configureWebSocket() {
         console.log("WS disconnected");
     };
     socket.onmessage = async (event) => {
-        console.log("recieived: ", event.data.text);
+        console.log("recieived: ", (event.data.text));
         // This page will just send messages, doesn't need to receive them
     };
 }
 
 Load("pr");
 Load("goal");
+// const sock = configureWebSocket();
+doWebSocket();
+
+function broadcastEvent(from, type, time, dist) {
+    const event = {
+        from: from,   // name of friend
+        type: type,   // goal or pr
+        time: time,  // goal/pr time
+        dist: dist,  // distance
+    };
+    socket.send(JSON.stringify(event));
+    console.log("sent: ", event);
+}
+
+
 // Do I need to implement this as a class? I don't think so... 
 // configureWebSocket();
 

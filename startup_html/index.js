@@ -4,6 +4,8 @@ const express = require('express');
 const app = express();
 const DB = require('./database.js');
 const { getCiphers } = require('crypto');
+const { peerProxy } = require('./peerProxy.js');
+
 const port =  4000;
 
 // JSON body parsing using built-in middleware
@@ -103,9 +105,11 @@ apiRouter.delete('/auth/logout', (_req, res) => {
   res.status(204).end();
 })
 
-app.listen(port, () => {
+const httpService = app.listen(port, () => {
     console.log(`Listening on port ${port}`);
   });
+
+  peerProxy(httpService);
 
 
 
