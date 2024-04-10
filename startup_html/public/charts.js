@@ -132,7 +132,7 @@ function MakeRow(dist, sec, option){
 
     tableEl.appendChild(rowEl);
 
-    
+    // TODO:broadcast the goal/pr here
 
 }
 // options for option are: goal, pr, calc
@@ -380,5 +380,40 @@ async function Save() {
     }
 }
 
+// TODO: write function displayMsg
+
+function configureWebSocket() {
+    function broadcastEvent(from, type, value) {
+        const event = {
+            from: from,
+            type: type,
+            value: value,
+        };
+        this.socket.send(JSON.stringify(event));
+    }
+
+    function displayMsg() {
+        // TODO
+    }
+
+    const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
+    const socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
+    socket.onopen = (event) => {
+        // do I want to display connection succesful message?
+        console.log("WS opened");
+    };
+    socket.onclose = (event) => {
+        console.log("WS disconnected");
+    };
+    socket.onmessage = async (event) => {
+        const msg = JSON.parse(await event.data.text());
+
+    }
+}
+
 Load("pr");
 Load("goal");
+// Do I need to implement this as a class? I don't think so... 
+configureWebSocket();
+
+// can i have a multi-page web socket setup?? 
