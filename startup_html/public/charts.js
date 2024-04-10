@@ -132,7 +132,8 @@ function MakeRow(dist, sec, option){
 
     tableEl.appendChild(rowEl);
 
-    // TODO:broadcast the goal/pr here
+    // Broadcast the goal/pr here
+    broadcastEvent(localStorage.getItem("username"), option, time, distance);
 
 }
 // options for option are: goal, pr, calc
@@ -382,23 +383,18 @@ async function Save() {
 
 // TODO: write function displayMsg
 
+
+function displayMsg() {
+    // TODO
+}
 function configureWebSocket() {
-    function broadcastEvent(from, type, value) {
-        const event = {
-            from: from,   // name of friend
-            type: type,   // goal or pr
-            time: time,  // goal/pr time
-            dist: dist,  // distance
-        };
-        this.socket.send(JSON.stringify(event));
-    }
-
-    function displayMsg() {
-        // TODO
-    }
-
+    
     const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
-    const socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
+    const new_socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
+    return new_socket;
+}
+
+function doWebSocket(socket){
     socket.onopen = (event) => {
         // do I want to display connection succesful message?
         console.log("WS opened");
@@ -414,6 +410,21 @@ function configureWebSocket() {
 
 Load("pr");
 Load("goal");
+const sock = configureWebSocket();
+doWebSocket(sock);
+
+function broadcastEvent(from, type, time, dist) {
+    const event = {
+        from: from,   // name of friend
+        type: type,   // goal or pr
+        time: time,  // goal/pr time
+        dist: dist,  // distance
+    };
+    sock.send(JSON.stringify(event));
+    console.log("sent: ", event.data.text);
+}
+
+
 // Do I need to implement this as a class? I don't think so... 
 // configureWebSocket();
 
