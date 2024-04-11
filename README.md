@@ -66,3 +66,9 @@ I have used CSS to style my product including
   - Endpoints to create a new user make a new document in MongoDB
   - Authentication supported - Done - Login and Logout supported
   - MongoDB stores user credentials and their goals they enter when the "Save All" button is pressed
+ 
+  ## WebSocket Deliverable
+  - Backend listens for WS connection - done.
+  - Frontend makes WS connection - done - connection is made from charts.html and feed.html
+  - Data sent over WS connection - done.
+  - Data displayed - done, data is displayed on feed.html
