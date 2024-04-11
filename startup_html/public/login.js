@@ -115,3 +115,5 @@ function setDisplay(controlId, display) {
 // })();
 
 
+// May need to add a clearout logout at start of session - not sure
+
