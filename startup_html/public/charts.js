@@ -135,6 +135,8 @@ function MakeRow(dist, sec, option){
 
     // Broadcast the goal/pr here
     broadcastEvent(localStorage.getItem("username"), option, time, distance);
+    // Broadcast the goal/pr here
+    broadcastEvent(localStorage.getItem("username"), option, time, distance);
 
 }
 // options for option are: goal, pr, calc
