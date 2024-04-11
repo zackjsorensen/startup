@@ -400,7 +400,8 @@ function doWebSocket(){
         console.log("WS disconnected");
     };
     socket.onmessage = async (event) => {
-        console.log("recieived: ", (event.data.text));
+        console.log("recieived: ", event);
+        console.log("received: ", JSON.parse(await event.data.text()));
         // This page will just send messages, doesn't need to receive them
     };
 }
