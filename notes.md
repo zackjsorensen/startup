@@ -201,5 +201,12 @@ Made up of collections ( arrays of Javascript Objects, each has a unique ID
 - See https://learn.cs260.click/page/webFrameworks/react/components/components_md
 ### State 
 - Some internal state of component. React.useState returns a variable continaing the current state and a function to update that state, you just call useState to declare those things, to create a state.
-- Whenever a component's state or properties change, the render function for the component and dependent componenets is called again. 
+- Whenever a component's state or properties change, the render function for the component and dependent componenets is called again.
+
+## React Router  
+- Makes single page applications possible
+- JS used to manipulate the DOM. The Router provides the paths a user can take and displays the appropriate components
+
+## More React Notes
+- To return multiple JSX components, wrap the collection of components with fragments <> comp1 comp2 </>
 
