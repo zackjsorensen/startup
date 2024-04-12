@@ -171,7 +171,7 @@ Made up of collections ( arrays of Javascript Objects, each has a unique ID
 - use the insertOne func on the collection object to add a new object
 - Use find funciton on the collection object, with optional params of query and options
 
-### React/Web Frameworks
+# React/Web Frameworks
 - JSX is hybrid of HTML and JS
 - We have to compile our code with Babel before deploying (Babel converts JSX to JS)
 - React gives you more modularized code.
@@ -181,7 +181,7 @@ Made up of collections ( arrays of Javascript Objects, each has a unique ID
 - ReactDOM.render(JSX/HTML thingy here, document.querySelector("#id"));
 - React dynamically updates the DOM for you
 
-### Tool Chain  
+## Tool Chain  
 - Compilers and stuff to go from JSX to deployable JS, components not pages
 - npm run build
 - We don't want to debug frontend from dist dir, everything is compressed
@@ -191,13 +191,15 @@ Made up of collections ( arrays of Javascript Objects, each has a unique ID
 - If we update one of the key things, that are passed as a hook or parameter, than React will automatically update that stuff f or us
 - Hook - when you set a userstate var - React knows, whenvever that changes, you need to update everywhere that's used
 - Prop - when a prop is passed as a parameter and that changes, React will go through and update the stuff dependent on that parameter
+- Use {} to put js in html
+- return the html
 
 ## Components 
 - render function - whatever it returns is inserted into the component's HTML element
 - the component can be defined else where and then it is rendered from JSX to HTML
 - Component PROPERTIES (props) can be passed in too
 - See https://learn.cs260.click/page/webFrameworks/react/components/components_md
-# State 
+### State 
 - Some internal state of component. React.useState returns a variable continaing the current state and a function to update that state, you just call useState to declare those things, to create a state.
 - Whenever a component's state or properties change, the render function for the component and dependent componenets is called again. 
 
