@@ -190,5 +190,14 @@ Made up of collections ( arrays of Javascript Objects, each has a unique ID
 ### React   
 - If we update one of the key things, that are passed as a hook or parameter, than React will automatically update that stuff f or us
 - Hook - when you set a userstate var - React knows, whenvever that changes, you need to update everywhere that's used
-- Prop - when a prop is passed as a parameter and that changes, React will go through and update the stuff dependent on that parameter  
+- Prop - when a prop is passed as a parameter and that changes, React will go through and update the stuff dependent on that parameter
+
+## Components 
+- render function - whatever it returns is inserted into the component's HTML element
+- the component can be defined else where and then it is rendered from JSX to HTML
+- Component PROPERTIES (props) can be passed in too
+- See https://learn.cs260.click/page/webFrameworks/react/components/components_md
+# State 
+- Some internal state of component. React.useState returns a variable continaing the current state and a function to update that state, you just call useState to declare those things, to create a state.
+- Whenever a component's state or properties change, the render function for the component and dependent componenets is called again. 
 
