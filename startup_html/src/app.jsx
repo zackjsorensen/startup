@@ -1,34 +1,49 @@
 import React from 'react';
 import './app.css';
+import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom';
+import { Login } from './login/login';
+import { Stats } from './charts/charts';
+import { Feed } from './feed/feed';
+
 
 // TODO: Fix Login/logout system
 
 export default function App() {
     return (
-        <div className='body'>
-            <header >
-                <div id="banner">
-                    <h1 id="logo"><em>PR318</em></h1>
-                </div>
-                <nav>
-                    <menu>
-                        <a href="login.html" className="navlink">Login</a>
-                        <a href="charts.html" className="navlink">My Stats</a>
-                        <a href="feed.html" className="navlink">Feed</a>
-                    </menu>
-                </nav>
-            </header>
+        <BrowserRouter>
+            <div className='body'>
+                <header >
+                    <div id="banner">
+                        <h1 id="logo"><em>PR318</em></h1>
+                    </div>
+                    <nav>
+                        <menu>
+                            <NavLink className="navlink" to=''>Login</NavLink>
+                            <NavLink className="navlink" to='charts'>My Stats</NavLink>
+                            <NavLink className="navlink" to='feed'>Feed</NavLink>
+                        </menu>
+                    </nav>
+                </header>
 
-            <main>App Components Go Here</main>
+                <Routes>
+                    <Route path='/' element={<Login/>} exact />
+                    <Route path='/charts' element={<Stats/>}/>
+                    <Route path='/feed' element={<Feed/>}/>
+                    <Route path='*' element={<NotFound />} />
+                </Routes>
 
-            <footer>
-                <p className="pfoot">Author: Zack Sorensen</p>
-                <p className="pfoot"><a id="githubfoot" href="https://github.com/zackjsorensen/startup">Github</a></p>
+                <footer>
+                    <p className="pfoot">Author: Zack Sorensen</p>
+                    <p className="pfoot"><a id="githubfoot" href="https://github.com/zackjsorensen/startup">Github</a></p>
 
-            </footer>
+                </footer>
 
-        </div>
-
+            </div>
+        </BrowserRouter>
 
     );
 }
+
+function NotFound() {
+    return <main className='container-fluid bg-secondary text-center'>404: Return to sender. Address unknown.</main>;
+  }
