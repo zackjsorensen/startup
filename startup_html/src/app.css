@@ -1,0 +1,290 @@
+/* ----------------------General ----------------------- */
+
+* {font-family: sans-serif;}
+
+.body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+    padding: 0px;
+}
+            /* --------------- Header/Banner -------- */
+header {
+    flex: 0 80px;  /* it doesn't get bigger than 80px */
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+   
+    max-height: 12%;
+}
+#banner {
+    color: white;
+    flex-grow: 2;
+    /* margin: auto; */
+    display: flex;
+    
+    flex-direction: row;
+    background-image: linear-gradient(to right, steelblue, gold);
+    height: 50%;
+    justify-content: center;
+}  
+
+/* #save_button {
+    display: flex;
+    float: right;
+} */
+
+#logo {
+    
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    float: left;
+    color: blue;
+    margin: auto;
+}
+em {
+    opacity: 0.6;
+}
+nav {
+    background-color: rgb(99, 98, 98);
+    display: flex; 
+    flex-direction: row;
+    align-items: center;
+    float: left;
+    height: 30%;
+}
+.navlink {
+    display:inline;
+    color: white;
+    padding-inline: 5px;
+    margin-top: 5px ;
+    margin-bottom: 5px;
+}
+        /* ---------- Main General ------------ */
+main {
+    flex: 1;  /*make main fill the window*/
+    display: flex;
+    background-color: rgb(1, 148, 197);
+    padding: 15px;
+}
+        /* --------- Footer ------------- */
+footer {
+    text-align: right;
+    display: block;
+    background-color: rgb(99, 98, 98);
+
+}
+.pfoot {
+    margin: 5px;
+    color: white;
+}
+#githubfoot {
+    color:white;}
+button {
+    display: flex;
+    width: 40px;
+    height: 20px;
+    justify-content: center;
+}
+
+/* ---------------------- INDEX.HTML ----------------------- */
+#indexmain{
+    text-align: center;
+    justify-content: center;
+}
+#loginset{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.runpic {
+    opacity: 0.;
+}
+
+
+
+/* ---------------------- MY STATS ----------------------- */
+
+#chartsmain {
+    display: flex;
+    flex-direction: column;
+    /* padding: px; */
+    /* justify-content: space-around; */
+    
+}
+
+.popup {
+    z-index: 2;
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: 30px; /* need to find way to make popup not move table down*/
+    width: 17vw;
+    height: 150px;;
+    flex-direction: column;
+    
+    background: whitesmoke;
+    color: steelblue;
+    align-items: center;
+    justify-content: space-evenly;
+    display: none;
+}
+
+.close {
+    display: block;
+    float: right;
+    background-color: whitesmoke;
+    color: red;
+    border-width: 0px;
+}
+
+#rightx {
+    float: right;
+}
+
+
+
+.add_form {
+    align-items: center;
+    display: none;
+    margin: 10px;
+    flex-direction: column;
+}
+
+
+
+#target_pace {
+    background-color: white;
+}
+
+#calc_tab {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat_table {
+    /* background-color: whitesmoke; */
+    width: 50vw;
+    border-spacing: none;
+    border-collapse: collapse;
+    padding: 20px;
+
+}
+ /* th:first-of-type {   
+    border-top-left-radius: 10px;
+  }                            // MAKES ROUNDED TABLES, NOT WORKING WHEN I ADD NEW ROWS
+  th:last-of-type {
+    border-top-right-radius: 10px;
+  }
+  tr:last-of-type td:first-of-type {
+    border-bottom-left-radius: 10px;
+  }
+  tr:last-of-type td:last-of-type {
+    border-bottom-right-radius: 10px;
+  }  */
+  
+
+.stat_table tr:nth-child(odd) {
+    background-color:rgb(222, 222, 222);
+}
+
+.stat_table tr:nth-child(even) {
+    background-color: white;
+}
+
+th, td {
+    border: none;
+    padding: 6px;
+    margin: 3px;
+}
+
+.stat_div .edit {
+    margin-bottom: 20px;
+    border-radius: 7%;
+}
+
+
+.stat_div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+ 
+.seg_headers {
+    display: block;
+}
+
+.del {
+    display: none;
+    width: 20px;
+    height: 20px ;
+    background-color: white;
+    color: red;
+    
+}
+.delcell{
+    background-color: rgb(1, 148, 197);
+}
+
+
+
+
+
+
+/* ---------------------- MY FEED ----------------------- */
+
+#feedmain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#feed {
+    width: 50%;
+}
+
+#running_img {
+    opacity: 0.4;
+    height: 30vh;
+    border-radius: 6px;
+}
+
+button {
+    margin: 10 px;
+    height: 30px;
+    width: 75px;
+    display: table-cell;
+    vertical-align: middle;
+    background-color: gold;
+    border-radius: 7px;
+}
+
+#quote_div {
+    display: block;
+    background-color: rgba(255, 217, 0, 0.804);
+    border-radius: 10px;
+    padding: 5px;
+}
+
+
+/* ---------------------- MEDIA CODE ----------------------- */
+@media only screen and (max-height: 500px) {
+  header {
+    display: none;
+  }
+}
+
+
+
+/* To DO
+    - figure out image
+    - add media for the add edit del buttons
+        I can make a drop down hover menu wiht a select - need to read about it 
+
+add new, edit, delete
+        */

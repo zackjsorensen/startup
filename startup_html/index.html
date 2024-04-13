@@ -1,50 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-
-    <head>
-        <title>PR318 Login</title>
-        <link rel="stylesheet" href="main.css">
-        <script src="login.js"></script>
-    </head>
-
-    <body onload="check()">
-        <header>
-            <div id="banner">
-                <h1 id="logo"><em>PR318</em></h1>
-            </div>
-            <nav>
-                <menu>
-                    <a onclick="logout()" style="color: white;">Logout</a>
-                </menu>
-            </nav>
-        </header>
-
-        <main id="indexmain">
-            <form id="loginset">
-                <p>
-                    <input type="text " id="username" placeholder="Username" value="Roar">
-                </p>
-                <p>
-                    <input type="text" id="password" placeholder="Password" value="roar">
-                </p>
-                <!-- Displayed when needing authentication -->
-            <div id = "loginControls" style="display: none;">
-                <button id = "b_login" onclick="event.preventDefault(); login()">Login</button>
-                <button id = "b_create" onclick="event.preventDefault(); create()">Create</button>
-            </div>
-            <!-- Displayed when ready to go -->
-            <div id = "playControls" style="display: none;">
-                <button id = "b_logout" style="display: none;" onclick="event.preventDefault(); logout()">Logout</button>
-                <button id = "b_go" style="display: none;" onclick="event.preventDefault(); go()">Go</button>
-            </div>
-                
-            </form>
-        </main>
-
-        <footer>
-            <p class="pfoot">Author: Zack Sorensen</p>
-            <p class="pfoot"><a id="githubfoot" href="https://github.com/zackjsorensen/startup">Github</a></p>
-        </footer>
-
-    </body>
+  <head>
+    <meta charset="utf-8" />
+    <!-- <link rel="icon" href="/favicon.ico" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <title>Startup React</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <script type="module" src="/index.jsx"></script>
+  </body>
 </html>
