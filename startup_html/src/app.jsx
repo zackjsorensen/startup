@@ -4,11 +4,16 @@ import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom';
 import { Login } from './login/login';
 import { Stats } from './charts/charts';
 import { Feed } from './feed/feed';
+import { AuthState } from './login/authState';
 
 
 // TODO: Fix Login/logout system
 
 export default function App() {
+    const [userName, setUserName] = React.useState(localStorage.getItem('username') || '');
+    const currentAuthState = userName? AuthState.Authenticated : AuthState.Unauthenticated; // TODO: Make sure to clear localStorage on logout
+    const [authState, setAuthState] = React.useState(currentAuthState); // will tell if logged in or not
+
     return (
         <BrowserRouter>
             <div className='body'>
@@ -26,7 +31,15 @@ export default function App() {
                 </header>
 
                 <Routes>
-                    <Route path='/' element={<Login/>} exact />
+                    <Route path='/' element={
+                    <Login
+                        userName = {userName}
+                        authState = {authState}
+                        onAuthChange={(userName, authState) => { // this function changes the state on login or logout
+                            setAuthState(authState);
+                            setUserName(userName);
+                        }}
+                    />} exact />
                     <Route path='/charts' element={<Stats/>}/>
                     <Route path='/feed' element={<Feed/>}/>
                     <Route path='*' element={<NotFound />} />
