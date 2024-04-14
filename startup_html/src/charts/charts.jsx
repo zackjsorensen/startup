@@ -1,6 +1,7 @@
 import React from 'react';
 import { AuthState } from '../login/authState';
 import { useState } from 'react';
+import { SaveStats } from './SaveStats';
 
 export function Stats({ authState }) {
     const [goals, setGoals] = React.useState([]);
@@ -48,8 +49,8 @@ export function Stats({ authState }) {
         //  Retrieve(g, goals, setGoals); // fetches data, sets goals to what is returned
         //  Retrieve(p, prs, setPrs);
 
-        console.log(JSON.stringify(goals));
-        console.log(JSON.stringify(prs));
+        console.log("Stats: ", JSON.stringify(goals));
+        console.log("Stats: ", JSON.stringify(prs));
 
         const goalRows = [];
         const prRows = [];
@@ -76,6 +77,10 @@ export function Stats({ authState }) {
 
         return (
             <main id="chartsmain">
+                <div><SaveStats
+                 goals={goals}
+                  prs={prs}
+                  /></div>
                 <div id="pr_div" className="stat_div">
                     <h2 className="seg_headers">My PRs</h2>
                     <table id="pr" className="stat_table">
