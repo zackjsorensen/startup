@@ -44,7 +44,7 @@ export default function App() {
                         } 
                         exact 
                     />
-                    <Route path='/charts' element={<Stats/>}/>
+                    <Route path='/charts' element={<Stats authState={authState}/>}/>
                     <Route path='/feed' element={<Feed/>}/>
                     <Route path='*' element={<NotFound />} />
                 </Routes>
