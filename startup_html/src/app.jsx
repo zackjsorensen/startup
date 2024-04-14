@@ -31,15 +31,19 @@ export default function App() {
                 </header>
 
                 <Routes>
-                    <Route path='/' element={
-                    <Login
-                        userName = {userName}
-                        authState = {authState}
-                        onAuthChange={(userName, authState) => { // this function changes the state on login or logout
-                            setAuthState(authState);
-                            setUserName(userName);
-                        }}
-                    />} exact />
+                    <Route path='/' 
+                        element={
+                            <Login
+                                userName = {userName}
+                                authState = {authState}
+                                onAuthChange={(userName, authState) => { 
+                                    setAuthState(authState);
+                                    setUserName(userName);
+                                }}
+                            />
+                        } 
+                        exact 
+                    />
                     <Route path='/charts' element={<Stats/>}/>
                     <Route path='/feed' element={<Feed/>}/>
                     <Route path='*' element={<NotFound />} />
@@ -48,12 +52,10 @@ export default function App() {
                 <footer>
                     <p className="pfoot">Author: Zack Sorensen</p>
                     <p className="pfoot"><a id="githubfoot" href="https://github.com/zackjsorensen/startup">Github</a></p>
-
                 </footer>
 
             </div>
         </BrowserRouter>
-
     );
 }
 

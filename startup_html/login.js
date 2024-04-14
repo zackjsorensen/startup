@@ -59,7 +59,6 @@ function logout() {
     fetch('api/auth/logout', {
         method: 'delete',
     }).then(() => (window.location.href = '/'));
-    // clearForm();
 }
 
 // makes a request with the email
