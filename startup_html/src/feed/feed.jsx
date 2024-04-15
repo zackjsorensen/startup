@@ -1,9 +1,10 @@
 import React from 'react';
+import { Quote } from './Quote';
 
 export function Feed() {
   return (
     <main id="feedmain">
-      <div>Feed displayed here</div>
+      <Quote/>
     </main>
   );
 }
