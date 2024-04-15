@@ -72,3 +72,10 @@ I have used CSS to style my product including
   - Frontend makes WS connection - done - connection is made from charts.html and feed.html
   - Data sent over WS connection - done.
   - Data displayed - done, data is displayed on feed.html
+ 
+  ## React Deliverable
+  Switched over to react and also combined some elements of the UI - for example, now you type goals/prs/ time to calculate in the same field, and use different buttons to say whether you want to submit it as a goal or a pr
+  - Bundled and transpiled - done
+  - Components - login, the tables on charts, and feed are all made of various components
+  - Router - routes different urls to bring in the matching components
+  - Hooks - I used Several UseState and UseEffect Hooks for loading user data and updating info when it is changed. 
