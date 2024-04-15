@@ -10,12 +10,10 @@ export function Login({userName, authState, onAuthChange}) {
   if (authState === AuthState.Authenticated) {
     return (
       <main>
-        <div>
           <Authenticated
             userName={userName}
             onLogout={() => onAuthChange(userName, AuthState.Unauthenticated)} // updates parent authState and username to Unauth and ''
           />
-        </div>
       </main>
     );
   }

@@ -19,6 +19,6 @@ export function Authenticated(props) {
 
     return (
 
-        <button onClick={() => logout()}>Logout</button> // return the logout button
+        <button id="logout" onClick={() => logout()}>Logout</button> // return the logout button
     )
 }
