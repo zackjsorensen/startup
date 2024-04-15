@@ -2,8 +2,11 @@ import React from 'react';
 import { AuthState } from '../login/authState';
 import { useState } from 'react';
 import { SaveStats } from './SaveStats';
+import { Add } from './Add';
+import { AddForm } from './AddForm';
 
 export function Stats({ authState }) {
+    console.log("Stats called");
     const [goals, setGoals] = React.useState([]);
     const [prs, setPrs] = React.useState([]);
     const g = "goal";
@@ -77,10 +80,9 @@ export function Stats({ authState }) {
 
         return (
             <main id="chartsmain">
-                <div><SaveStats
-                 goals={goals}
-                  prs={prs}
-                  /></div>
+                <div><SaveStats goals={goals} prs={prs} /></div>
+                {/* <div><Add goals={goals} prs={prs} /></div> */}
+                <div><AddForm goals={goals} setGoals={setGoals} prs={prs} setPrs={setPrs}/></div>
                 <div id="pr_div" className="stat_div">
                     <h2 className="seg_headers">My PRs</h2>
                     <table id="pr" className="stat_table">

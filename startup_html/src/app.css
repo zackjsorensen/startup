@@ -65,7 +65,7 @@ nav {
         /* ---------- Main General ------------ */
 main {
     flex: 1;  /*make main fill the window*/
-    display: flex;
+    /* display: flex; */
     background-color: rgb(1, 148, 197);
     padding: 15px;
 }
@@ -108,7 +108,7 @@ button {
 
 
 /* ---------------------- MY STATS ----------------------- */
-
+/* 
 #chartsmain {
     display: flex;
     flex-direction: column;
@@ -149,7 +149,7 @@ button {
 
 .add_form {
     align-items: center;
-    display: none;
+    /* display: none; */
     margin: 10px;
     flex-direction: column;
 }
@@ -231,7 +231,7 @@ th, td {
 }
 
 
-
+ */
 
 
 
