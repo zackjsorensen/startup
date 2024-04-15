@@ -19,9 +19,6 @@ export function Table({}) {
    
     React.useEffect(() => {
 
-        console.log('matt');
-
-
         socket.onopen = (event) => {
             // do I want to display connection succesful message?
             console.log("WS opened");
@@ -35,7 +32,7 @@ export function Table({}) {
             console.log("message: ", message);
             // This page will just send messages, doesn't need to receive them
 
-            notifications.push([JSON.stringify(message)]);
+            notifications.push([`A friend added a goal of ${message.time} for ${message.dist}!`]);
             setNotifications(notifications.concat());
         };
     
