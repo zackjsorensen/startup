@@ -1,6 +1,18 @@
 const { WebSocketServer } = require('ws');
 const uuid = require('uuid');
 
+let connections = [];
+
+
+function publishMessage(data){
+  console.log("Publishing: ", data);
+  console.log("Connections: ", connections);
+  connections.forEach((c) => {
+    console.log("publishing to connection");
+    c.ws.send(data);
+  });
+}
+
 function peerProxy(httpServer) {
   // Create a websocket object
   const wss = new WebSocketServer({ noServer: true });
@@ -13,8 +25,7 @@ function peerProxy(httpServer) {
   });
 
   // Keep track of all the connections so we can forward messages
-  let connections = [];
-
+  
   wss.on('connection', (ws) => {
     const connection = { id: uuid.v4(), alive: true, ws: ws };
     connections.push(connection);
@@ -42,6 +53,7 @@ function peerProxy(httpServer) {
     ws.on('pong', () => {
       connection.alive = true;
     });
+
   });
 
   // Keep active connections alive
@@ -58,4 +70,6 @@ function peerProxy(httpServer) {
   }, 10000);
 }
 
-module.exports = { peerProxy };
+
+
+module.exports = { peerProxy: peerProxy, publishMessage: publishMessage };

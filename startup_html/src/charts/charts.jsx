@@ -13,6 +13,10 @@ export function Stats({ authState }) {
     const p = "pr";
     //  option is pr or goal, setData is the setGoals or setPrs, data is prs or goals
     React.useEffect(() => {
+
+
+        console.log('matt2');
+
         fetch(`/api/goals`)
             .then((response) => response.json())
             .then((new_goals) => {

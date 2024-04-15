@@ -4,7 +4,7 @@ const express = require('express');
 const app = express();
 const DB = require('./database.js');
 const { getCiphers } = require('crypto');
-const { peerProxy } = require('./peerProxy.js');
+const { peerProxy, publishMessage } = require('./peerProxy.js');
 
 const port =  4000;
 
@@ -86,8 +86,8 @@ apiRouter.get('/goals', async (req, res) => {
 
 apiRouter.put('/save/stats', async (req, res)  => {
   // TODO: make funciton to send request that has the goals in charts.js
-  console.log("Called saver");
-  console.log(req);
+  console.log("Called saver - matt");
+  //console.log(req);
   const goals = req.body.goals;
   const prs = req.body.prs;
   const AuthCookieName = 'token';
@@ -98,7 +98,18 @@ apiRouter.put('/save/stats', async (req, res)  => {
     res.send(user);
   } else {
     res.send({msg: "Error saving data"});
-  }})
+  }
+
+  const goal = goals[goals.length-1]; // grab last goal
+  
+  publishMessage(JSON.stringify({
+    from: '1',
+    type: '2',
+    time: goal[1],
+    dist: goal[0]
+  }));
+
+})
 
 apiRouter.delete('/auth/logout', (_req, res) => {
   res.clearCookie("token");
