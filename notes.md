@@ -210,3 +210,26 @@ Made up of collections ( arrays of Javascript Objects, each has a unique ID
 ## More React Notes
 - To return multiple JSX components, wrap the collection of components with fragments <> comp1 comp2 </>
 
+### Final Notes  
+Ports:
+- Port 80 is for HTTP
+- 22 for SSH
+- 443 for HTTPS
+Status Codes:
+- 100's - informational
+- 200's - Success
+- 300's - Redirect
+- 400's - Client Error
+- 500's - Server error
+
+# Web layers
+- Link - hardware - physical connections
+- Internet - IP - establishing connections
+- Transport - TCP - Moving connection information packets
+- Application - HTTPS - Functionality like web browsing
+
+# Web Service Gateway/ Reverse Proxy
+- Looks at requests and maps them to the correct ports so users don't have to remember a bunch of port numbers -- Caddy.
+
+# Daemons 
+- Normally, you run a program from console, the program automatically terminates on close or restart
