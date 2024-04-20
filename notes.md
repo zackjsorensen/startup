@@ -233,3 +233,5 @@ Status Codes:
 
 # Daemons 
 - Normally, you run a program from console, the program automatically terminates on close or restart
+- We use PM2
+- Registering your program as a daemon so it's always running in the background
